@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>群聊热力图可视化 - 埃涅阿斯</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(100, 100, 255, 0.15), rgba(255, 100, 200, 0.1));
+            border-radius: 20px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p { color: #a0a0b0; font-size: 14px; }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 30, 60, 0.8), rgba(40, 40, 80, 0.6));
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(100, 100, 255, 0.2);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label { color: #888; font-size: 13px; margin-top: 6px; }
+
+        .charts-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+        .chart-card {
+            background: linear-gradient(135deg, rgba(25, 25, 50, 0.85), rgba(35, 35, 65, 0.7));
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e0e0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chart-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .filter-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+        .filter-label {
+            font-size: 13px;
+            color: #888;
+            margin-right: 4px;
+        }
+
+        .filter-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b0c0;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.4);
+            color: #fff;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .filter-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .date-indicator {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.2), rgba(118, 75, 162, 0.2));
+            border: 1px solid rgba(240, 147, 251, 0.4);
+            color: #f093fb;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .reset-btn {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            cursor: pointer;
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid rgba(255, 107, 107, 0.4);
+            color: #ff6b6b;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .reset-btn:hover {
+            background: rgba(255, 107, 107, 0.4);
+            color: #fff;
+        }
+
+        .chart-container { width: 100%; height: 500px; }
+        .chart-container-small { width: 100%; height: 350px; }
+
+        .topic-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .topic-card {
+            background: linear-gradient(135deg, rgba(20, 20, 45, 0.8), rgba(30, 30, 55, 0.6));
+            border-radius: 14px;
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .topic-card h4 {
+            color: #b0b0c0;
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .topic-card .msg-count { color: #667eea; font-weight: 600; }
+
+        .keyword-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+        .keyword-tag {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            color: #c0c0e0;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .keyword-tag:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+        }
+
+        .keyword-count { color: #f093fb; margin-left: 4px; font-size: 11px; }
+
+        .keyword-full-section { margin-top: 20px; }
+
+        .keyword-full-title {
+            font-size: 15px;
+            color: #c0c0d0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .keyword-full-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .user-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .user-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.2s;
+        }
+
+        .user-item:hover { background: rgba(255, 255, 255, 0.06); }
+
+        .user-rank {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .user-rank.top1 { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); }
+        .user-rank.top2 { background: linear-gradient(135deg, #ffa502, #ff7f50); }
+        .user-rank.top3 { background: linear-gradient(135deg, #ffd32a, #ffb800); }
+
+        .user-name {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+
+        .user-count { font-size: 13px; color: #667eea; font-weight: 600; }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .interaction-hint {
+            font-size: 11px;
+            color: #666;
+            margin-left: 10px;
+            font-style: italic;
+        }
+
+        .mode-switch {
+            display: flex;
+            gap: 6px;
+            margin-left: 10px;
+        }
+
+        .mode-btn {
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #888;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .mode-btn:hover {
+            color: #bbb;
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .mode-btn.active {
+            background: rgba(102, 126, 234, 0.25);
+            border-color: rgba(102, 126, 234, 0.5);
+            color: #a0b8ff;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 24px; }
+            .chart-container, .chart-container-small { height: 400px; }
+            .stat-value { font-size: 28px; }
+            .chart-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 群聊热力图可视化</h1>
+            <p id="chatInfo">正在加载数据...</p>
+        </div>
+
+        <div class="stats-row" id="statsRow"></div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">📅 每日消息量趋势 <span class="interaction-hint">点击柱状图筛选日期</span></div>
+                    <div class="filter-controls" id="dailyFilterControls"></div>
+                </div>
+                <div class="chart-container-small" id="dailyChart"></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">📊 一周聊天活跃度热力图 <span class="interaction-hint">点击格子筛选</span></div>
+                    <div class="filter-controls" id="heatmapFilterControls"></div>
+                </div>
+                <div class="chart-container" id="activityChart"></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">💬 热门话题关键词</div>
+                    <div class="filter-controls">
+                        <span class="filter-label">时间范围:</span>
+                        <button class="filter-btn active" data-range="all">全部</button>
+                        <button class="filter-btn" data-range="day">当日</button>
+                        <button class="filter-btn" data-range="week">一周</button>
+                        <button class="filter-btn" data-range="month">一月</button>
+                        <div class="mode-switch" id="keywordModeSwitch">
+                            <button class="mode-btn active" data-mode="date">按日期</button>
+                            <button class="mode-btn" data-mode="dow">按星期</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="keyword-full-section" id="keywordFullSection"></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">⏰ 24小时消息分布</div>
+                    <div class="filter-controls" id="hourFilterControls"></div>
+                </div>
+                <div class="chart-container-small" id="hourChart"></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">各时段热门关键词对比</div>
+                </div>
+                <div class="topic-section" id="topicSection"></div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title">👥 活跃用户排行榜</div>
+                <div class="user-list" id="userList"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>数据来源: Telegram Chat Export | 可视化: ECharts</p>
+        </div>
+    </div>
+
+    <script>
+        let processedData = null;
+        let activityChartInstance = null;
+        let dailyChartInstance = null;
+        let hourChartInstance = null;
+
+        let selectedDate = null;
+        let selectedDow = null;
+        let selectedDowHour = null;
+        let keywordRange = 'all';
+        let keywordMode = 'date';
+
+        const DAY_NAMES = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
+        const DAY_NAMES_SHORT = ['日', '一', '二', '三', '四', '五', '六'];
+
+        async function loadData() {
+            try {
+                const response = await fetch('processed_data.json');
+                if (!response.ok) throw new Error('无法加载数据文件');
+                processedData = await response.json();
+                renderAll();
+                setTimeout(bindEvents, 100);
+            } catch (error) {
+                document.getElementById('chatInfo').textContent =
+                    '❌ 加载失败: ' + error.message + '。请确保已运行 data_processor.py 生成 processed_data.json';
+            }
+        }
+
+        function renderAll() {
+            renderStats();
+            renderDailyChart();
+            renderActivityHeatmap();
+            renderKeywordSection();
+            renderHourChart();
+            renderTopicSection();
+            renderUserList();
+            renderFilterControls();
+        }
+
+        function bindEvents() {
+            document.querySelectorAll('.filter-btn[data-range]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn[data-range]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    keywordRange = btn.dataset.range;
+                    if (!selectedDate && !selectedDow) {
+                        renderKeywordSection();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    keywordMode = btn.dataset.mode;
+                    renderKeywordSection();
+                });
+            });
+
+            if (dailyChartInstance) {
+                dailyChartInstance.on('click', function(params) {
+                    if (params.componentType === 'series') {
+                        const clickedDate = params.name;
+                        if (selectedDate === clickedDate) {
+                            clearDateFilter();
+                        } else {
+                            selectDate(clickedDate);
+                        }
+                    }
+                });
+
+                dailyChartInstance.on('mouseover', { seriesIndex: 0 }, function(params) {
+                    dailyChartInstance.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex
+                    });
+                });
+            }
+
+            if (activityChartInstance) {
+                activityChartInstance.on('click', function(params) {
+                    if (params.componentType === 'series') {
+                        const hour = params.data[0];
+                        const dayIdx = params.data[1];
+                        const value = params.data[2];
+
+                        if (value === 0) return;
+
+                        if (selectedDow === dayIdx && selectedDowHour === hour) {
+                            clearDowFilter();
+                        } else {
+                            selectDow(dayIdx, hour);
+                        }
+                    }
+                });
+            }
+        }
+
+        function selectDate(dateStr) {
+            selectedDate = dateStr;
+            selectedDow = null;
+            selectedDowHour = null;
+            document.querySelectorAll('.filter-btn[data-range]').forEach(b => {
+                b.classList.remove('active');
+                b.disabled = true;
+            });
+            renderFilterControls();
+            renderDailyChart();
+            renderActivityHeatmap();
+            renderHourChart();
+            renderKeywordSection();
+            renderTopicSection();
+            renderStats();
+        }
+
+        function clearDateFilter() {
+            selectedDate = null;
+            selectedDow = null;
+            selectedDowHour = null;
+            document.querySelectorAll('.filter-btn[data-range]').forEach(b => {
+                b.disabled = false;
+            });
+            document.querySelector(`.filter-btn[data-range="${keywordRange}"]`).classList.add('active');
+            renderFilterControls();
+            renderDailyChart();
+            renderActivityHeatmap();
+            renderHourChart();
+            renderKeywordSection();
+            renderTopicSection();
+            renderStats();
+        }
+
+        function selectDow(dayIdx, hour) {
+            selectedDow = dayIdx;
+            selectedDowHour = hour;
+            selectedDate = null;
+            document.querySelectorAll('.filter-btn[data-range]').forEach(b => {
+                b.classList.remove('active');
+                b.disabled = true;
+            });
+            renderFilterControls();
+            renderDailyChart();
+            renderActivityHeatmap();
+            renderHourChart();
+            renderKeywordSection();
+            renderTopicSection();
+            renderStats();
+        }
+
+        function clearDowFilter() {
+            clearDateFilter();
+        }
+
+        function getDowDates(dayIdx) {
+            const dailyDetails = processedData.daily_details;
+            const allDates = Object.keys(dailyDetails).sort();
+            const targetDates = [];
+            for (const dateStr of allDates) {
+                const dt = new Date(dateStr + 'T00:00:00');
+                if (dt.getDay() === (dayIdx + 1) % 7) {
+                    targetDates.push(dateStr);
+                }
+            }
+            return targetDates;
+        }
+
+        function renderFilterControls() {
+            const dailyControls = document.getElementById('dailyFilterControls');
+            const heatmapControls = document.getElementById('heatmapFilterControls');
+            const hourControls = document.getElementById('hourFilterControls');
+
+            if (selectedDate) {
+                const detail = processedData.daily_details[selectedDate];
+                const count = detail ? detail.message_count : 0;
+                const userCount = detail ? detail.user_count : 0;
+
+                dailyControls.innerHTML = `
+                    <div class="date-indicator">
+                        📅 ${selectedDate} · ${count}条 · ${userCount}人
+                        <button class="reset-btn" onclick="clearDateFilter()">清除</button>
+                    </div>
+                `;
+                heatmapControls.innerHTML = '';
+                hourControls.innerHTML = `
+                    <div class="date-indicator" style="font-size:11px">
+                        已筛选: ${selectedDate}
+                        <button class="reset-btn" onclick="clearDateFilter()">×</button>
+                    </div>
+                `;
+            } else if (selectedDow !== null) {
+                const dates = getDowDates(selectedDow);
+                const totalMsgs = dates.reduce((sum, d) => {
+                    const det = processedData.daily_details[d];
+                    return sum + (det ? det.message_count : 0);
+                }, 0);
+
+                dailyControls.innerHTML = '';
+                heatmapControls.innerHTML = `
+                    <div class="date-indicator">
+                        📆 ${DAY_NAMES[selectedDow]} ${selectedDowHour !== null ? selectedDowHour + ':00' : ''} · ${dates.length}天 · ${totalMsgs}条
+                        <button class="reset-btn" onclick="clearDowFilter()">清除</button>
+                    </div>
+                `;
+                hourControls.innerHTML = `
+                    <div class="date-indicator" style="font-size:11px">
+                        已筛选: ${DAY_NAMES[selectedDow]}${selectedDowHour !== null ? ' ' + selectedDowHour + ':00' : ''}
+                        <button class="reset-btn" onclick="clearDowFilter()">×</button>
+                    </div>
+                `;
+            } else {
+                dailyControls.innerHTML = '';
+                heatmapControls.innerHTML = '';
+                hourControls.innerHTML = '';
+            }
+        }
+
+        function renderStats() {
+            const meta = processedData.meta;
+            document.getElementById('chatInfo').innerHTML =
+                `<strong>${meta.chat_name}</strong> | 群组ID: ${meta.chat_id} | 生成时间: ${meta.generated_at?.split('T')[0] || '-'}`;
+
+            const dailySummary = processedData.daily_summary;
+            const dates = Object.keys(dailySummary);
+            const totalUsers = new Set();
+            Object.values(dailySummary).forEach(d => {
+                (d.active_users || []).forEach(u => totalUsers.add(u));
+            });
+
+            let totalMessages = meta.total_messages;
+            let dayCount = dates.length;
+            let userCount = totalUsers.size;
+            let avgDaily = dayCount > 0 ? (totalMessages / dayCount).toFixed(0) : 0;
+
+            if (selectedDate) {
+                const detail = processedData.daily_details[selectedDate];
+                if (detail) {
+                    totalMessages = detail.message_count;
+                    dayCount = 1;
+                    userCount = detail.user_count;
+                    avgDaily = detail.message_count;
+                }
+            } else if (selectedDow !== null) {
+                const dowDates = getDowDates(selectedDow);
+                totalMessages = 0;
+                const users = new Set();
+                for (const d of dowDates) {
+                    const det = processedData.daily_details[d];
+                    if (det) {
+                        totalMessages += det.message_count;
+                        for (const u of (det.users || [])) users.add(u);
+                    }
+                }
+                dayCount = dowDates.length;
+                userCount = users.size;
+                avgDaily = dayCount > 0 ? Math.round(totalMessages / dayCount) : 0;
+            }
+
+            const stats = [
+                { value: totalMessages.toLocaleString(), label: '消息总数' },
+                { value: dayCount, label: dayCount === 1 ? '当日' : (selectedDow !== null ? '星期数' : '统计天数') },
+                { value: userCount, label: '参与用户' },
+                { value: avgDaily.toLocaleString(), label: dayCount === 1 ? '消息量' : '日均消息' }
+            ];
+
+            document.getElementById('statsRow').innerHTML = stats.map(s => `
+                <div class="stat-card">
+                    <div class="stat-value">${s.value}</div>
+                    <div class="stat-label">${s.label}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderDailyChart() {
+            const daily = processedData.daily_summary;
+            const dates = Object.keys(daily).sort();
+            const counts = dates.map(d => daily[d].count);
+
+            if (!dailyChartInstance) {
+                dailyChartInstance = echarts.init(document.getElementById('dailyChart'), 'dark');
+            }
+
+            const option = {
+                backgroundColor: 'transparent',
+                tooltip: {
+                    backgroundColor: 'rgba(30, 30, 50, 0.95)',
+                    borderColor: 'rgba(102, 126, 234, 0.5)',
+                    borderWidth: 1,
+                    textStyle: { color: '#e0e0f0' },
+                    formatter: function(params) {
+                        const d = daily[params.name];
+                        const isSelected = selectedDate === params.name;
+                        return `
+                            <strong>${params.name}${isSelected ? ' 🎯' : ''}</strong><br/>
+                            消息数: <strong style="color:#f093fb">${d.count}</strong><br/>
+                            活跃用户: ${d.user_count}人<br/>
+                            首条消息: ${d.first_msg}<br/>
+                            末条消息: ${d.last_msg}<br/>
+                            高峰时段: ${d.peak_hour}:00 (${d.peak_count}条)<br/>
+                            <span style="color:#666;font-size:11px">${isSelected ? '点击取消筛选' : '点击筛选此日期'}</span>
+                        `;
+                    }
+                },
+                grid: { top: 30, bottom: 50, left: 60, right: 30 },
+                xAxis: {
+                    type: 'category',
+                    data: dates,
+                    axisLabel: { color: '#888', fontSize: 11, rotate: 45 },
+                    axisLine: { lineStyle: { color: '#444' } }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '消息数',
+                    nameTextStyle: { color: '#888' },
+                    axisLabel: { color: '#888' },
+                    splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } }
+                },
+                series: [{
+                    name: '消息量',
+                    type: 'bar',
+                    data: dates.map(d => ({
+                        value: daily[d].count,
+                        itemStyle: selectedDate === d ? {
+                            borderRadius: [6, 6, 0, 0],
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#f093fb' },
+                                { offset: 1, color: '#764ba2' }
+                            ]),
+                            shadowBlur: 15,
+                            shadowColor: 'rgba(240, 147, 251, 0.5)'
+                        } : selectedDow !== null ? (() => {
+                            const dt = new Date(d + 'T00:00:00');
+                            const dayIdx = (dt.getDay() + 6) % 7;
+                            if (dayIdx === selectedDow) {
+                                return {
+                                    borderRadius: [6, 6, 0, 0],
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                        { offset: 0, color: '#4facfe' },
+                                        { offset: 1, color: '#00f2fe' }
+                                    ]),
+                                    shadowBlur: 10,
+                                    shadowColor: 'rgba(79, 172, 254, 0.4)'
+                                };
+                            }
+                            return {
+                                borderRadius: [6, 6, 0, 0],
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#667eea' },
+                                    { offset: 1, color: '#764ba2' }
+                                ]),
+                                opacity: 0.35
+                            };
+                        })() : {
+                            borderRadius: [6, 6, 0, 0],
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#667eea' },
+                                { offset: 1, color: '#764ba2' }
+                            ])
+                        }
+                    })),
+                    barWidth: '50%',
+                    emphasis: {
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                { offset: 0, color: '#f093fb' },
+                                { offset: 1, color: '#764ba2' }
+                            ]),
+                            shadowBlur: 20,
+                            shadowColor: 'rgba(240, 147, 251, 0.6)'
+                        }
+                    }
+                }]
+            };
+
+            dailyChartInstance.setOption(option, true);
+        }
+
+        function renderActivityHeatmap() {
+            const data = processedData.activity_heatmap;
+            const hours = Array.from({length: 24}, (_, i) => i + '时');
+
+            const heatmapData = [];
+            for (let day = 0; day < 7; day++) {
+                for (let hour = 0; hour < 24; hour++) {
+                    const value = data[`${day}_${hour}`] || 0;
+                    heatmapData.push([hour, day, value]);
+                }
+            }
+
+            const maxVal = Math.max(...heatmapData.map(d => d[2]));
+
+            if (!activityChartInstance) {
+                activityChartInstance = echarts.init(document.getElementById('activityChart'), 'dark');
+            }
+
+            const option = {
+                backgroundColor: 'transparent',
+                tooltip: {
+                    backgroundColor: 'rgba(30, 30, 50, 0.95)',
+                    borderColor: 'rgba(102, 126, 234, 0.5)',
+                    borderWidth: 1,
+                    padding: [12, 16],
+                    textStyle: { color: '#e0e0f0', fontSize: 13 },
+                    formatter: function(params) {
+                        const h = params.data[0];
+                        const d = DAY_NAMES[params.data[1]];
+                        const topics = getHotTopics(params.data[1], h);
+                        let result = `<strong>${d} ${h}:00-${h+1}:00</strong><br/>消息数: <strong style="color:#f093fb">${params.data[2]}</strong>`;
+                        if (topics.length > 0) {
+                            result += `<br/><span style="color:#888;font-size:11px">热门话题: ${topics.slice(0,3).join(', ')}</span>`;
+                        }
+                        if (params.data[2] > 0) {
+                            result += `<br/><span style="color:#667eea;font-size:11px">点击筛选此时段</span>`;
+                        }
+                        return result;
+                    }
+                },
+                grid: { top: 60, bottom: 80, left: 70, right: 40 },
+                xAxis: {
+                    type: 'category',
+                    data: hours,
+                    axisLabel: { color: '#888', fontSize: 11, interval: 1 },
+                    axisLine: { lineStyle: { color: '#444' } },
+                    splitArea: { show: true }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: DAY_NAMES,
+                    axisLabel: { color: '#888', fontSize: 12 },
+                    axisLine: { lineStyle: { color: '#444' } },
+                    splitArea: { show: true }
+                },
+                visualMap: {
+                    min: 0,
+                    max: maxVal,
+                    calculable: true,
+                    orient: 'horizontal',
+                    left: 'center',
+                    bottom: 20,
+                    textStyle: { color: '#aaa', fontSize: 11 },
+                    inRange: {
+                        color: ['#1a1a3a', '#2d2d5f', '#4a4a8f', '#667eea', '#764ba2', '#f093fb']
+                    }
+                },
+                series: [{
+                    name: '消息热度',
+                    type: 'heatmap',
+                    data: heatmapData,
+                    label: {
+                        show: true,
+                        fontSize: 10,
+                        color: '#fff',
+                        formatter: function(params) {
+                            return params.data[2] > 0 ? params.data[2] : '';
+                        }
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 15,
+                            shadowColor: 'rgba(240, 147, 251, 0.5)'
+                        }
+                    },
+                    itemStyle: {
+                        borderRadius: 4,
+                        borderColor: selectedDow !== null ? 'rgba(240, 147, 251, 0.8)' : 'rgba(0,0,0,0.3)',
+                        borderWidth: selectedDow !== null ? 2 : 1
+                    },
+                    selectedMode: 'single',
+                    selectedStyle: {
+                        itemStyle: {
+                            borderColor: '#f093fb',
+                            borderWidth: 3,
+                            shadowBlur: 20,
+                            shadowColor: 'rgba(240, 147, 251, 0.8)'
+                        }
+                    }
+                }]
+            };
+
+            if (selectedDow !== null && selectedDowHour !== null) {
+                option.series[0].selected = [[selectedDowHour, selectedDow]];
+            } else if (selectedDow !== null) {
+                const hourData = [];
+                for (let h = 0; h < 24; h++) {
+                    const val = data[`${selectedDow}_${h}`] || 0;
+                    if (val > 0) hourData.push([h, selectedDow]);
+                }
+                option.series[0].selected = hourData;
+            }
+
+            activityChartInstance.setOption(option);
+        }
+
+        function getHotTopics(day, hour) {
+            const key = `${day}_${hour}`;
+            const topics = processedData.topic_heatmap[key] || [];
+            return topics.map(t => t[0]);
+        }
+
+        function getFilteredKeywords() {
+            const dailyDetails = processedData.daily_details;
+            const allDates = Object.keys(dailyDetails).sort();
+            let targetDates = [];
+
+            if (selectedDate) {
+                targetDates = [selectedDate];
+            } else if (selectedDow !== null) {
+                targetDates = getDowDates(selectedDow);
+            } else {
+                if (keywordRange === 'all') {
+                    targetDates = allDates;
+                } else if (keywordRange === 'day') {
+                    targetDates = [allDates[allDates.length - 1]];
+                } else if (keywordRange === 'week') {
+                    const lastDate = allDates[allDates.length - 1];
+                    if (lastDate) {
+                        const lastDt = new Date(lastDate + 'T00:00:00');
+                        for (let i = 6; i >= 0; i--) {
+                            const d = new Date(lastDt);
+                            d.setDate(d.getDate() - i);
+                            const key = d.toISOString().split('T')[0];
+                            if (allDates.includes(key)) {
+                                targetDates.push(key);
+                            }
+                        }
+                    }
+                } else if (keywordRange === 'month') {
+                    const lastDate = allDates[allDates.length - 1];
+                    if (lastDate) {
+                        const lastDt = new Date(lastDate + 'T00:00:00');
+                        for (let i = 29; i >= 0; i--) {
+                            const d = new Date(lastDt);
+                            d.setDate(d.getDate() - i);
+                            const key = d.toISOString().split('T')[0];
+                            if (allDates.includes(key)) {
+                                targetDates.push(key);
+                            }
+                        }
+                    }
+                }
+            }
+
+            const mergedKeywords = {};
+            let totalMessages = 0;
+
+            for (const date of targetDates) {
+                const detail = dailyDetails[date];
+                if (detail) {
+                    totalMessages += detail.message_count;
+                    for (const [word, count] of Object.entries(detail.keywords)) {
+                        mergedKeywords[word] = (mergedKeywords[word] || 0) + count;
+                    }
+                }
+            }
+
+            const sortedKeywords = Object.entries(mergedKeywords)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 40);
+
+            return {
+                keywords: sortedKeywords,
+                totalMessages,
+                dateCount: targetDates.length,
+                dateRange: targetDates
+            };
+        }
+
+        function renderKeywordSection() {
+            const { keywords, totalMessages, dateCount } = getFilteredKeywords();
+            const container = document.getElementById('keywordFullSection');
+
+            let rangeLabel = '';
+            if (selectedDate) {
+                rangeLabel = `当日 · ${selectedDate}`;
+            } else if (selectedDow !== null) {
+                rangeLabel = `${DAY_NAMES[selectedDow]}${selectedDowHour !== null ? ' ' + selectedDowHour + ':00时段' : ''} · 共${dateCount}天`;
+            } else {
+                const rangeNames = { all: '全部时间', day: '最近一天', week: '最近一周', month: '最近一月' };
+                rangeLabel = rangeNames[keywordRange];
+            }
+
+            container.innerHTML = `
+                <div class="keyword-full-title">
+                    📌 ${rangeLabel} · ${totalMessages.toLocaleString()} 条消息 · Top ${keywords.length} 关键词
+                </div>
+                <div class="keyword-full-list">
+                    ${keywords.map(([word, count]) => `
+                        <span class="keyword-tag">${word}<span class="keyword-count">${count}</span></span>
+                    `).join('') || '<span style="color:#666;font-size:13px">暂无数据</span>'}
+                </div>
+            `;
+        }
+
+        function renderTopicSection() {
+            let filteredStats;
+
+            if (selectedDate) {
+                const detail = processedData.daily_details[selectedDate];
+                if (detail) {
+                    const hourCounts = detail.hour_counts;
+                    const periodMap = {
+                        '凌晨 (0-6点)': [0, 6],
+                        '上午 (6-12点)': [6, 12],
+                        '下午 (12-18点)': [12, 18],
+                        '晚上 (18-24点)': [18, 24]
+                    };
+                    filteredStats = {};
+                    for (const [period, [start, end]] of Object.entries(periodMap)) {
+                        let count = 0;
+                        for (let h = start; h < end; h++) count += hourCounts[h];
+                        const periodKeywords = Object.entries(detail.keywords)
+                            .sort((a, b) => b[1] - a[1])
+                            .slice(0, 15);
+                        filteredStats[period] = {
+                            message_count: count,
+                            top_keywords: periodKeywords
+                        };
+                    }
+                }
+            } else if (selectedDow !== null) {
+                const dowDates = getDowDates(selectedDow);
+                const periodMap = {
+                    '凌晨 (0-6点)': [0, 6],
+                    '上午 (6-12点)': [6, 12],
+                    '下午 (12-18点)': [12, 18],
+                    '晚上 (18-24点)': [18, 24]
+                };
+                filteredStats = {};
+                const periodKeywords = { '凌晨 (0-6点)': {}, '上午 (6-12点)': {}, '下午 (12-18点)': {}, '晚上 (18-24点)': {} };
+                const periodCounts = { '凌晨 (0-6点)': 0, '上午 (6-12点)': 0, '下午 (12-18点)': 0, '晚上 (18-24点)': 0 };
+
+                for (const date of dowDates) {
+                    const detail = processedData.daily_details[date];
+                    if (!detail) continue;
+                    const hourCounts = detail.hour_counts;
+                    for (const [period, [start, end]] of Object.entries(periodMap)) {
+                        for (let h = start; h < end; h++) {
+                            periodCounts[period] += hourCounts[h];
+                        }
+                        for (const [word, cnt] of Object.entries(detail.keywords)) {
+                            if (!periodKeywords[period][word]) {
+                                periodKeywords[period][word] = 0;
+                            }
+                            periodKeywords[period][word] += cnt;
+                        }
+                    }
+                }
+
+                for (const period of Object.keys(periodMap)) {
+                    const sorted = Object.entries(periodKeywords[period])
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 15);
+                    filteredStats[period] = {
+                        message_count: periodCounts[period],
+                        top_keywords: sorted
+                    };
+                }
+            } else {
+                filteredStats = processedData.time_period_stats;
+            }
+
+            const periodIcons = {
+                '凌晨 (0-6点)': '🌙',
+                '上午 (6-12点)': '☀️',
+                '下午 (12-18点)': '🌤️',
+                '晚上 (18-24点)': '🌆'
+            };
+
+            document.getElementById('topicSection').innerHTML = Object.entries(filteredStats || {}).map(([period, info]) => {
+                const keywords = (info.top_keywords || []).map(([word, count]) =>
+                    `<span class="keyword-tag">${word}<span class="keyword-count">${count}</span></span>`
+                ).join('');
+
+                return `
+                    <div class="topic-card">
+                        <h4>${periodIcons[period] || '📌'} ${period} <span class="msg-count">(${info.message_count}条)</span></h4>
+                        <div class="keyword-tags">${keywords || '<span style="color:#666;font-size:12px">暂无数据</span>'}</div>
+                    </div>
+                `;
+            }).join('') || '<div style="grid-column:1/-1;color:#666;text-align:center;padding:20px">暂无数据</div>';
+        }
+
+        function renderHourChart() {
+            let hourCounts;
+
+            if (selectedDate) {
+                const detail = processedData.daily_details[selectedDate];
+                hourCounts = detail ? detail.hour_counts : new Array(24).fill(0);
+            } else if (selectedDow !== null) {
+                hourCounts = new Array(24).fill(0);
+                const data = processedData.activity_heatmap;
+                for (let hour = 0; hour < 24; hour++) {
+                    hourCounts[hour] = data[`${selectedDow}_${hour}`] || 0;
+                }
+            } else {
+                const data = processedData.activity_heatmap;
+                hourCounts = new Array(24).fill(0);
+                for (let day = 0; day < 7; day++) {
+                    for (let hour = 0; hour < 24; hour++) {
+                        hourCounts[hour] += (data[`${day}_${hour}`] || 0);
+                    }
+                }
+            }
+
+            const maxHour = hourCounts.indexOf(Math.max(...hourCounts));
+            const hourLabels = Array.from({length: 24}, (_, i) => i + ':00');
+
+            if (!hourChartInstance) {
+                hourChartInstance = echarts.init(document.getElementById('hourChart'), 'dark');
+            }
+
+            const option = {
+                backgroundColor: 'transparent',
+                tooltip: {
+                    backgroundColor: 'rgba(30, 30, 50, 0.95)',
+                    borderColor: 'rgba(102, 126, 234, 0.5)',
+                    borderWidth: 1,
+                    textStyle: { color: '#e0e0f0' },
+                    formatter: function(params) {
+                        let label = '';
+                        if (selectedDate) label = `${selectedDate} `;
+                        else if (selectedDow !== null) label = `${DAY_NAMES[selectedDow]} `;
+                        return `${label}${params.name}<br/>消息数: <strong style="color:#f093fb">${params.value}</strong>`;
+                    }
+                },
+                grid: { top: 30, bottom: 50, left: 60, right: 30 },
+                xAxis: {
+                    type: 'category',
+                    data: hourLabels,
+                    axisLabel: { color: '#888', fontSize: 11, interval: 1 },
+                    axisLine: { lineStyle: { color: '#444' } }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '消息数',
+                    nameTextStyle: { color: '#888' },
+                    axisLabel: { color: '#888' },
+                    splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } }
+                },
+                series: [{
+                    name: '小时消息量',
+                    type: 'line',
+                    data: hourCounts,
+                    smooth: true,
+                    symbol: 'circle',
+                    symbolSize: (selectedDate || selectedDow !== null) ? 8 : 6,
+                    lineStyle: {
+                        width: (selectedDate || selectedDow !== null) ? 4 : 3,
+                        color: (selectedDate || selectedDow !== null) ? '#f093fb' : '#667eea'
+                    },
+                    itemStyle: {
+                        color: function(params) {
+                            if (params.dataIndex === maxHour) return '#f093fb';
+                            return (selectedDate || selectedDow !== null) ? '#f093fb' : '#667eea';
+                        },
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: (selectedDate || selectedDow !== null) ? 'rgba(240, 147, 251, 0.4)' : 'rgba(102, 126, 234, 0.4)' },
+                            { offset: 1, color: (selectedDate || selectedDow !== null) ? 'rgba(240, 147, 251, 0.05)' : 'rgba(118, 75, 162, 0.05)' }
+                        ])
+                    },
+                    markPoint: {
+                        data: [{ type: 'max', name: '最高峰' }],
+                        label: { color: '#fff' }
+                    }
+                }]
+            };
+
+            hourChartInstance.setOption(option, true);
+        }
+
+        function renderUserList() {
+            let users;
+
+            if (selectedDate) {
+                const detail = processedData.daily_details[selectedDate];
+                if (detail) {
+                    const keywordData = detail.keywords;
+                    users = Object.entries(processedData.top_users)
+                        .map(([name, count]) => {
+                            const dayCount = detail.message_count > 0 ? Math.round(count * detail.message_count / processedData.meta.total_messages) : 0;
+                            return [name, dayCount];
+                        })
+                        .filter(([_, c]) => c > 0)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 20);
+                } else {
+                    users = processedData.top_users;
+                }
+            } else if (selectedDow !== null) {
+                const dowDates = getDowDates(selectedDow);
+                const userCounts = {};
+                const dailyDetails = processedData.daily_details;
+
+                for (const date of dowDates) {
+                    const detail = dailyDetails[date];
+                    if (!detail) continue;
+                    const dayTotalMsgs = detail.message_count;
+                    const totalAll = processedData.meta.total_messages;
+                    for (const [name, count] of processedData.top_users) {
+                        if (!userCounts[name]) userCounts[name] = 0;
+                        userCounts[name] += Math.round(count * dayTotalMsgs / Math.max(totalAll, 1));
+                    }
+                }
+
+                users = Object.entries(userCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 20);
+            } else {
+                users = processedData.top_users;
+            }
+
+            if (!users || users.length === 0) {
+                users = processedData.top_users.slice(0, 10);
+            }
+
+            document.getElementById('userList').innerHTML = users.map(([name, count], i) => {
+                let rankClass = '';
+                if (i === 0) rankClass = 'top1';
+                else if (i === 1) rankClass = 'top2';
+                else if (i === 2) rankClass = 'top3';
+
+                return `
+                    <div class="user-item">
+                        <div class="user-rank ${rankClass}">${i + 1}</div>
+                        <div class="user-name" title="${name}">${name}</div>
+                        <div class="user-count">${count}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        window.addEventListener('resize', function() {
+            if (activityChartInstance) activityChartInstance.resize();
+            if (dailyChartInstance) dailyChartInstance.resize();
+            if (hourChartInstance) hourChartInstance.resize();
+        });
+
+        loadData();
+
+        window.__heatmap = {
+            selectDate: selectDate,
+            clearDateFilter: clearDateFilter,
+            selectDow: selectDow,
+            clearDowFilter: clearDowFilter,
+            getState: function() {
+                return {
+                    selectedDate: selectedDate,
+                    selectedDow: selectedDow,
+                    selectedDowHour: selectedDowHour,
+                    keywordRange: keywordRange
+                };
+            },
+            getDowDates: getDowDates,
+            testData: function() {
+                const allDates = Object.keys(processedData.daily_details).sort();
+                const result = {};
+                allDates.forEach(d => {
+                    const dt = new Date(d + 'T00:00:00');
+                    const dayNames = ['周日','周一','周二','周三','周四','周五','周六'];
+                    result[d] = dayNames[dt.getDay()];
+                });
+                return result;
+            }
+        };
+    </script>
+</body>
+</html>

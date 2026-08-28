@@ -1,0 +1,132 @@
+{
+ "name": "测试示例群组",
+ "type": "private_supergroup",
+ "id": 1000000001,
+ "messages": [
+  {
+   "id": 1,
+   "type": "service",
+   "date": "2026-01-01T09:00:00",
+   "date_unixtime": "1767225600",
+   "actor": "测试管理员",
+   "actor_id": "user1001001001",
+   "action": "create_channel",
+   "title": "测试示例群组 (megagroup)",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 2,
+   "type": "message",
+   "date": "2026-01-01T09:05:00",
+   "date_unixtime": "1767225900",
+   "from": "张三",
+   "from_id": "user2002002002",
+   "text": "大家好！欢迎来到测试群组。",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "大家好！欢迎来到测试群组。"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "message",
+   "date": "2026-01-01T09:06:00",
+   "date_unixtime": "1767225960",
+   "from": "李四",
+   "from_id": "user3003003003",
+   "text": "你好呀，很高兴认识大家！",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "你好呀，很高兴认识大家！"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "message",
+   "date": "2026-01-01T09:07:00",
+   "date_unixtime": "1767226020",
+   "from": "张三",
+   "from_id": "user2002002002",
+   "reply_to_message_id": 3,
+   "text": "欢迎欢迎～",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "欢迎欢迎～"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2026-01-01T09:10:00",
+   "date_unixtime": "1767226200",
+   "from": "王五",
+   "from_id": "user4004004004",
+   "forwarded_from": "外部频道",
+   "text": "今天天气不错，适合出去走走。",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "今天天气不错，适合出去走走。"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2026-01-01T09:15:00",
+   "date_unixtime": "1767226500",
+   "from": "李四",
+   "from_id": "user3003003003",
+   "media_type": "sticker",
+   "sticker_emoji": "👍",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2026-01-01T09:20:00",
+   "date_unixtime": "1767226800",
+   "from": "张三",
+   "from_id": "user2002002002",
+   "text": [
+    {
+     "type": "plain",
+     "text": "分享一个链接："
+    },
+    {
+     "type": "link",
+     "text": "https://example.com"
+    }
+   ],
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "分享一个链接："
+    },
+    {
+     "type": "link",
+     "text": "https://example.com"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "service",
+   "date": "2026-01-01T09:30:00",
+   "date_unixtime": "1767227400",
+   "actor": "测试管理员",
+   "actor_id": "user1001001001",
+   "action": "invite_members",
+   "text": "",
+   "text_entities": []
+  }
+ ]
+}
