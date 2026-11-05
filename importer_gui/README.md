@@ -57,17 +57,18 @@ python main.py
 
 ## ✨ 核心功能
 
-### 1. 智能去重
+### 1. 智能去重（Schema v2）
 
-- **基于消息ID去重**：每条 Telegram 消息有唯一 ID，程序通过比对数据库中已有 ID 来判断是否重复
-- **INSERT OR IGNORE**：使用 SQLite 原生机制，防止重复插入
-- **二次导入零影响**：同一个 JSON 文件可反复导入，不会产生重复数据
+- **复合去重键**：`message_key = chat_id:message_id`。Telegram 的消息 ID 只是群内序号，不同群会重复，因此不能单独作为全局主键。
+- **UNIQUE 约束 + INSERT OR IGNORE**：重复导入由 SQLite 直接拒绝，不依赖应用层判断。
+- **二次导入零影响**：同一个 JSON 可反复导入，消息与文本实体都不会重复。
+- **可验证**：`verify_integrity()` / `verify_db.py` 会输出重复键与孤儿文本实体数量。
 
 ```python
-# 去重逻辑示例
-existing_ids = db.get_existing_message_ids()  # 获取所有已有ID
-new_messages, skipped = filter_new_messages(messages, existing_ids)
-# 只有 new_messages 会被导入
+# 增量导入逻辑
+existing_keys = db.get_existing_message_keys(chat_id)
+new_messages, skipped = JSONImporter.filter_new_messages(messages, existing_keys, chat_id)
+imported = db.insert_messages_batch(new_messages, chat_id)
 ```
 
 ### 2. 增量导入
@@ -106,27 +107,30 @@ new_messages, skipped = filter_new_messages(messages, existing_ids)
 | chat_type | TEXT | 群组类型 |
 | chat_id | TEXT | 群组原始ID |
 
-#### messages - 消息表
+#### messages - 消息表（Schema v2）
 | 字段 | 类型 | 说明 |
 |------|------|------|
-| id | INTEGER PK | 消息ID（来自Telegram） |
-| chat_id | TEXT | 发送者ID |
+| row_id | INTEGER PK | 自增物理主键 |
+| message_key | TEXT UNIQUE | 去重键 `chat_id:message_id` |
+| id | INTEGER | Telegram 群内消息 ID |
+| chat_id | TEXT | 群组 ID |
 | message_type | TEXT | message / service |
 | date | TEXT | ISO8601日期 |
 | date_unixtime | INTEGER | Unix时间戳 |
 | sender_name | TEXT | 发送者昵称 |
 | sender_id | TEXT | 发送者原始ID |
 | text_content | TEXT | 消息文本 |
-| reply_to_message_id | INTEGER | 回复目标ID |
+| reply_to_message_id | INTEGER | 回复目标ID（群内序号） |
 | forwarded_from | TEXT | 转发来源 |
 | media_type | TEXT | 媒体类型 |
 | raw_json | TEXT | 原始JSON |
+| content_hash | TEXT | 内容哈希（辅助校验） |
 
 #### text_entities - 文本实体
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | id | INTEGER PK | 自增主键 |
-| message_id | INTEGER FK | 关联消息 |
+| message_key | TEXT FK | 关联 `messages.message_key` |
 | entity_type | TEXT | plain/emoji/bold/code等 |
 | entity_text | TEXT | 实体文本 |
 
@@ -143,10 +147,14 @@ new_messages, skipped = filter_new_messages(messages, existing_ids)
 
 ### 索引
 ```sql
+CREATE UNIQUE INDEX uq_messages_message_key ON messages(message_key);
+CREATE INDEX idx_messages_chat_id ON messages(chat_id);
 CREATE INDEX idx_messages_sender_id ON messages(sender_id);
 CREATE INDEX idx_messages_date ON messages(date_unixtime);
-CREATE INDEX idx_entities_message_id ON text_entities(message_id);
+CREATE INDEX idx_entities_message_key ON text_entities(message_key);
 ```
+
+> 完整设计见仓库根目录 [SystemDesign.md](../SystemDesign.md) 与 [APISpec.md](../APISpec.md)。
 
 ---
 

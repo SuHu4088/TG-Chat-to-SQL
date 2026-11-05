@@ -7,6 +7,7 @@
 - **一周内**每天的聊天趋势
 - 各时段的热门话题关键词
 - 活跃用户排行榜
+- **任意时间区间**（近 7 / 30 / 90 天或自定义缩放）内的全部指标
 
 ## 🗂️ 目录结构
 
@@ -19,8 +20,17 @@ heatmap_visualization/
 ├── data_processor.py      # 数据处理脚本（核心）
 ├── processed_data.json    # 处理后的数据（运行后生成）
 ├── index.html             # 热力图可视化页面
+├── vendor/echarts.min.js  # 本地 ECharts，离线可用
 └── run.py                 # 本地服务器启动脚本
 ```
+
+## 🕒 时间轴交互（v1.1 新增）
+
+- 每日趋势图下方有 **slider 时间轴**，拖动即可缩放日期窗口；鼠标滚轮也可缩放；
+- 图上方提供「近 7 天 / 近 30 天 / 近 90 天 / 全部」快捷区间；
+- 区间变化后，顶部统计（消息总数、统计天数、参与用户、日均）、关键词、时段画像、用户榜**同步只统计该区间**；
+- 点击某一天仍可下钻到当日详情，点击「清除」回到全量视图；
+- 覆盖全部日期时自动视为未筛选，避免出现「全选但仍显示筛选标签」。
 
 ## 🚀 快速开始
 
@@ -28,8 +38,10 @@ heatmap_visualization/
 
 ```bash
 cd heatmap_visualization
-python data_processor.py
+python data_processor.py --input result.json --output processed_data.json
 ```
+
+可选参数：`--top-users 20` 控制活跃用户排行数量。
 
 运行后将从 `result.json` 读取数据，生成 `processed_data.json`。
 

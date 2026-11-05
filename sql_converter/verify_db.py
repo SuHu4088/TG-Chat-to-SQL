@@ -1,45 +1,57 @@
-import sqlite3
+"""打印数据库概览，并执行去重/完整性校验。"""
 
-conn = sqlite3.connect('telegram_chat.db')
-cursor = conn.cursor()
+import argparse
+import os
+import sys
 
-print('=== 群组信息 ===')
-cursor.execute('SELECT * FROM chat_info')
-for row in cursor.fetchall():
-    print(f'ID: {row[0]}, 名称: {row[1]}, 类型: {row[2]}, 群组ID: {row[3]}')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(REPO_ROOT, 'importer_gui'))
 
-print('\n=== 消息统计 ===')
-cursor.execute('SELECT COUNT(*) FROM messages')
-print(f'消息总数: {cursor.fetchone()[0]}')
+from db_manager import DatabaseManager  # noqa: E402
 
-cursor.execute('SELECT COUNT(*) FROM text_entities')
-print(f'文本实体总数: {cursor.fetchone()[0]}')
 
-cursor.execute('SELECT message_type, COUNT(*) FROM messages GROUP BY message_type')
-print('\n按类型统计:')
-for row in cursor.fetchall():
-    print(f'  {row[0]}: {row[1]}')
+def main(argv=None):
+    parser = argparse.ArgumentParser(description='校验 TG-Chat-to-SQL 数据库')
+    parser.add_argument('--db', default='telegram_chat.db', help='SQLite 数据库路径')
+    args = parser.parse_args(argv)
 
-cursor.execute('SELECT media_type, COUNT(*) FROM messages WHERE media_type IS NOT NULL')
-print('\n按媒体类型统计:')
-for row in cursor.fetchall():
-    print(f'  {row[0]}: {row[1]}')
+    db_path = os.path.abspath(args.db)
+    if not os.path.exists(db_path):
+        print(f'错误: 数据库不存在 {db_path}')
+        return 1
 
-cursor.execute('SELECT COUNT(*) FROM messages WHERE reply_to_message_id IS NOT NULL')
-print(f'\n有回复的消息数: {cursor.fetchone()[0]}')
+    db = DatabaseManager(db_path)
+    db.connect()
 
-cursor.execute('SELECT COUNT(*) FROM messages WHERE forwarded_from IS NOT NULL')
-print(f'转发的消息数: {cursor.fetchone()[0]}')
+    print('=== 群组信息 ===')
+    cursor = db.conn.cursor()
+    cursor.execute('SELECT id, chat_name, chat_type, chat_id FROM chat_info')
+    for row in cursor.fetchall():
+        print(f'ID: {row[0]}, 名称: {row[1]}, 类型: {row[2]}, 群组ID: {row[3]}')
 
-print('\n=== 前10条消息示例 ===')
-cursor.execute('SELECT id, message_type, date, sender_name, text_content FROM messages ORDER BY id LIMIT 10')
-for row in cursor.fetchall():
-    text = row[4][:50] if row[4] else '(空)'
-    print(f'[{row[0]}] {row[1]} | {row[2]} | {row[3]}: {text}')
+    print('\n=== 消息统计 ===')
+    stats = db.get_statistics()
+    for key, value in stats.items():
+        print(f'  {key}: {value:,}')
 
-print('\n=== 发送者消息数TOP10 ===')
-cursor.execute('SELECT sender_name, COUNT(*) as cnt FROM messages WHERE sender_name IS NOT NULL GROUP BY sender_name ORDER BY cnt DESC LIMIT 10')
-for row in cursor.fetchall():
-    print(f'  {row[0]}: {row[1]}条')
+    print('\n=== 去重校验 ===')
+    integrity = db.verify_integrity()
+    print(f'  schema 版本: {integrity["schema_version"]}')
+    print(f'  消息总数: {integrity["total_messages"]:,}')
+    print(f'  唯一去重键: {integrity["distinct_message_keys"]:,}')
+    print(f'  重复键: {len(integrity["duplicate_keys"])}')
+    print(f'  孤儿文本实体: {integrity["orphan_entities"]}')
+    print(f'  结果: {"通过" if integrity["ok"] else "失败"}')
 
-conn.close()
+    cursor.execute('SELECT sender_name, COUNT(*) AS cnt FROM messages '
+                   'WHERE sender_name IS NOT NULL GROUP BY sender_name ORDER BY cnt DESC LIMIT 10')
+    print('\n=== 发送者 TOP10 ===')
+    for row in cursor.fetchall():
+        print(f'  {row[0]}: {row[1]} 条')
+
+    db.close()
+    return 0 if integrity['ok'] else 2
+
+
+if __name__ == '__main__':
+    sys.exit(main())

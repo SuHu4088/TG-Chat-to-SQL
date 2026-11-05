@@ -81,6 +81,17 @@
                     <p id="chatSubtitle"></p>
                 </div>
                 <div class="chat-actions">
+                    <div class="page-controls">
+                        <select id="pageSizeSelect" class="page-size-select" title="每页条数">
+                            <option value="200">200/页</option>
+                            <option value="500" selected>500/页</option>
+                            <option value="1000">1000/页</option>
+                            <option value="2000">2000/页</option>
+                        </select>
+                        <button class="page-btn" id="prevPage" title="上一页">‹</button>
+                        <span class="page-info" id="pageInfo">1 / 1</span>
+                        <button class="page-btn" id="nextPage" title="下一页">›</button>
+                    </div>
                     <button class="action-btn" id="scrollBottom" title="滚到底部">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                             <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>

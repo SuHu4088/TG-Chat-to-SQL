@@ -1,0 +1,7488 @@
+{
+  "name": "深夜代码俱乐部 · 演示",
+  "type": "private_group",
+  "id": 1234567890,
+  "messages": [
+    {
+      "id": 2,
+      "type": "message",
+      "date": "2026-09-06T02:57:21",
+      "date_unixtime": "1788634641",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "这个接口超时是代理的问题，不是服务端。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "type": "message",
+      "date": "2026-09-06T13:38:06",
+      "date_unixtime": "1788673086",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "message",
+      "date": "2026-09-06T15:27:02",
+      "date_unixtime": "1788679622",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ],
+      "reply_to_message_id": 3,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 4,
+      "type": "message",
+      "date": "2026-09-06T19:08:14",
+      "date_unixtime": "1788692894",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 3,
+      "type": "message",
+      "date": "2026-09-06T21:55:27",
+      "date_unixtime": "1788702927",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "message",
+      "date": "2026-09-06T22:52:03",
+      "date_unixtime": "1788706323",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "message",
+      "date": "2026-09-06T22:59:17",
+      "date_unixtime": "1788706757",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "message",
+      "date": "2026-09-07T00:53:23",
+      "date_unixtime": "1788713603",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 收到。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 12,
+      "type": "message",
+      "date": "2026-09-07T01:42:21",
+      "date_unixtime": "1788716541",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "别急，先回滚，再定位。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "message",
+      "date": "2026-09-07T13:16:57",
+      "date_unixtime": "1788758217",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "message",
+      "date": "2026-09-07T20:42:13",
+      "date_unixtime": "1788784933",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reply_to_message_id": 9,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 11,
+      "type": "message",
+      "date": "2026-09-07T21:34:29",
+      "date_unixtime": "1788788069",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "message",
+      "date": "2026-09-07T22:52:11",
+      "date_unixtime": "1788792731",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "这个接口超时是代理的问题，不是服务端。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "message",
+      "date": "2026-09-08T09:28:20",
+      "date_unixtime": "1788830900",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "type": "message",
+      "date": "2026-09-08T14:14:13",
+      "date_unixtime": "1788848053",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "message",
+      "date": "2026-09-08T15:13:09",
+      "date_unixtime": "1788851589",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "message",
+      "date": "2026-09-08T17:20:36",
+      "date_unixtime": "1788859236",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ],
+      "reply_to_message_id": 1,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "message",
+      "date": "2026-09-08T18:28:08",
+      "date_unixtime": "1788863288",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "type": "message",
+      "date": "2026-09-08T19:49:12",
+      "date_unixtime": "1788868152",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "message",
+      "date": "2026-09-08T21:29:52",
+      "date_unixtime": "1788874192",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "type": "message",
+      "date": "2026-09-08T22:15:13",
+      "date_unixtime": "1788876913",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "文档里的版本号要和 CHANGELOG 对上。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "type": "message",
+      "date": "2026-09-09T02:51:34",
+      "date_unixtime": "1788893494",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "media_type": "sticker",
+      "sticker_emoji": "🧪",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 26,
+      "type": "message",
+      "date": "2026-09-09T03:09:13",
+      "date_unixtime": "1788894553",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "依赖下载又超时，走代理吧。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。 大家怎么看？"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "type": "message",
+      "date": "2026-09-09T11:42:58",
+      "date_unixtime": "1788925378",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "今天的构建又挂了，日志里全是 warning。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "message",
+      "date": "2026-09-09T16:09:05",
+      "date_unixtime": "1788941345",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "文档我补完了，README 首屏记得放真实截图。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "type": "message",
+      "date": "2026-09-09T16:33:12",
+      "date_unixtime": "1788942792",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "message",
+      "date": "2026-09-09T20:01:42",
+      "date_unixtime": "1788955302",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "type": "message",
+      "date": "2026-09-09T20:44:20",
+      "date_unixtime": "1788957860",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 24,
+      "type": "message",
+      "date": "2026-09-09T21:04:33",
+      "date_unixtime": "1788959073",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ],
+      "reply_to_message_id": 5,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 30,
+      "type": "message",
+      "date": "2026-09-10T10:24:19",
+      "date_unixtime": "1789007059",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "type": "message",
+      "date": "2026-09-10T14:41:32",
+      "date_unixtime": "1789022492",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ],
+      "reply_to_message_id": 2,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 32,
+      "type": "message",
+      "date": "2026-09-10T16:27:14",
+      "date_unixtime": "1789028834",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "type": "message",
+      "date": "2026-09-10T21:20:14",
+      "date_unixtime": "1789046414",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "周末有人一起看线上监控吗？ 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？ 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "type": "message",
+      "date": "2026-09-11T09:36:56",
+      "date_unixtime": "1789090616",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "刚发版，灰度 10%，先观察半小时。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "type": "message",
+      "date": "2026-09-11T13:29:56",
+      "date_unixtime": "1789104596",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "缓存命中率只有 62%，有点低。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 1,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 37,
+      "type": "message",
+      "date": "2026-09-11T17:02:12",
+      "date_unixtime": "1789117332",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "文档里的版本号要和 CHANGELOG 对上。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "type": "message",
+      "date": "2026-09-11T20:31:29",
+      "date_unixtime": "1789129889",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "type": "message",
+      "date": "2026-09-11T21:03:21",
+      "date_unixtime": "1789131801",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 22,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 39,
+      "type": "message",
+      "date": "2026-09-11T21:24:59",
+      "date_unixtime": "1789133099",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "晚安，明天继续。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。 我先试试。"
+        }
+      ],
+      "reply_to_message_id": 31,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 45,
+      "type": "message",
+      "date": "2026-09-12T09:54:38",
+      "date_unixtime": "1789178078",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "本地跑没问题，CI 上就挂，玄学。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "type": "message",
+      "date": "2026-09-12T11:10:17",
+      "date_unixtime": "1789182617",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "需求评审改到明天下午三点。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "type": "message",
+      "date": "2026-09-12T15:35:28",
+      "date_unixtime": "1789198528",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 41,
+      "type": "service",
+      "date": "2026-09-12T15:50:01",
+      "date_unixtime": "1789199401",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 46,
+      "type": "message",
+      "date": "2026-09-12T20:45:23",
+      "date_unixtime": "1789217123",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "type": "message",
+      "date": "2026-09-12T22:05:59",
+      "date_unixtime": "1789221959",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "type": "message",
+      "date": "2026-09-12T22:42:52",
+      "date_unixtime": "1789224172",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "type": "message",
+      "date": "2026-09-12T23:27:43",
+      "date_unixtime": "1789226863",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 55,
+      "type": "message",
+      "date": "2026-09-13T12:40:24",
+      "date_unixtime": "1789274424",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "type": "message",
+      "date": "2026-09-13T13:14:37",
+      "date_unixtime": "1789276477",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "type": "message",
+      "date": "2026-09-13T13:52:43",
+      "date_unixtime": "1789278763",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "media_type": "sticker",
+      "sticker_emoji": "🎉",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 52,
+      "type": "message",
+      "date": "2026-09-13T15:44:46",
+      "date_unixtime": "1789285486",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "type": "message",
+      "date": "2026-09-13T16:31:11",
+      "date_unixtime": "1789288271",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "本地跑没问题，CI 上就挂，玄学。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "type": "message",
+      "date": "2026-09-13T18:56:25",
+      "date_unixtime": "1789296985",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "type": "message",
+      "date": "2026-09-13T20:02:31",
+      "date_unixtime": "1789300951",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "type": "message",
+      "date": "2026-09-13T20:03:31",
+      "date_unixtime": "1789301011",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "type": "message",
+      "date": "2026-09-13T21:16:07",
+      "date_unixtime": "1789305367",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ],
+      "reply_to_message_id": 44,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "type": "message",
+      "date": "2026-09-13T22:20:33",
+      "date_unixtime": "1789309233",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "SQL 写完了，等 DBA  review。 我先试试。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。 我先试试。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "type": "message",
+      "date": "2026-09-13T23:40:20",
+      "date_unixtime": "1789314020",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ],
+      "reply_to_message_id": 39,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 61,
+      "type": "message",
+      "date": "2026-09-14T15:12:36",
+      "date_unixtime": "1789369956",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "type": "message",
+      "date": "2026-09-14T18:12:23",
+      "date_unixtime": "1789380743",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "type": "message",
+      "date": "2026-09-14T19:31:15",
+      "date_unixtime": "1789385475",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "type": "message",
+      "date": "2026-09-14T21:32:12",
+      "date_unixtime": "1789392732",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "type": "message",
+      "date": "2026-09-14T21:33:46",
+      "date_unixtime": "1789392826",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "type": "service",
+      "date": "2026-09-14T22:10:01",
+      "date_unixtime": "1789395001",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 68,
+      "type": "message",
+      "date": "2026-09-15T11:07:20",
+      "date_unixtime": "1789441640",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "晚安，明天继续。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。 大家怎么看？"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 67,
+      "type": "message",
+      "date": "2026-09-15T16:21:22",
+      "date_unixtime": "1789460482",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reply_to_message_id": 29,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 66,
+      "type": "message",
+      "date": "2026-09-15T16:32:27",
+      "date_unixtime": "1789461147",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。"
+        }
+      ],
+      "reply_to_message_id": 28,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 72,
+      "type": "message",
+      "date": "2026-09-15T18:26:12",
+      "date_unixtime": "1789467972",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "type": "message",
+      "date": "2026-09-15T19:01:04",
+      "date_unixtime": "1789470064",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "测试用例还差边界条件，我补一下。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "type": "service",
+      "date": "2026-09-15T20:43:25",
+      "date_unixtime": "1789476205",
+      "action": "invite_members",
+      "actor": "老陈"
+    },
+    {
+      "id": 70,
+      "type": "message",
+      "date": "2026-09-15T21:58:55",
+      "date_unixtime": "1789480735",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "type": "message",
+      "date": "2026-09-15T22:31:54",
+      "date_unixtime": "1789482714",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "media_type": "sticker",
+      "sticker_emoji": "🛠️",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 79,
+      "type": "message",
+      "date": "2026-09-16T10:23:20",
+      "date_unixtime": "1789525400",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "type": "message",
+      "date": "2026-09-16T13:07:19",
+      "date_unixtime": "1789535239",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "文档里的版本号要和 CHANGELOG 对上。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 50,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 76,
+      "type": "message",
+      "date": "2026-09-16T16:14:18",
+      "date_unixtime": "1789546458",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 74,
+      "type": "message",
+      "date": "2026-09-16T18:51:16",
+      "date_unixtime": "1789555876",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "文档我补完了，README 首屏记得放真实截图。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "type": "message",
+      "date": "2026-09-16T20:40:04",
+      "date_unixtime": "1789562404",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "type": "message",
+      "date": "2026-09-16T21:08:54",
+      "date_unixtime": "1789564134",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "周末有人一起看线上监控吗？ 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？ 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "type": "message",
+      "date": "2026-09-16T23:22:22",
+      "date_unixtime": "1789572142",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "type": "service",
+      "date": "2026-09-17T18:13:14",
+      "date_unixtime": "1789639994",
+      "action": "invite_members",
+      "actor": "老陈"
+    },
+    {
+      "id": 83,
+      "type": "message",
+      "date": "2026-09-17T21:37:01",
+      "date_unixtime": "1789652221",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "type": "message",
+      "date": "2026-09-17T22:43:36",
+      "date_unixtime": "1789656216",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "type": "message",
+      "date": "2026-09-17T22:51:11",
+      "date_unixtime": "1789656671",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "晚安，明天继续。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "type": "message",
+      "date": "2026-09-18T00:41:09",
+      "date_unixtime": "1789663269",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "type": "message",
+      "date": "2026-09-18T22:41:42",
+      "date_unixtime": "1789742502",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "咖啡续命，今天第四杯了。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。 收到。"
+        }
+      ],
+      "reply_to_message_id": 61,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 87,
+      "type": "message",
+      "date": "2026-09-18T22:54:03",
+      "date_unixtime": "1789743243",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "type": "message",
+      "date": "2026-09-18T23:55:23",
+      "date_unixtime": "1789746923",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "forwarded_from": "开源日报",
+      "forwarded_from_id": "channel_demo"
+    },
+    {
+      "id": 93,
+      "type": "message",
+      "date": "2026-09-19T03:58:23",
+      "date_unixtime": "1789761503",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "今天的构建又挂了，日志里全是 warning。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "type": "message",
+      "date": "2026-09-19T12:52:44",
+      "date_unixtime": "1789793564",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ],
+      "reply_to_message_id": 83,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "type": "message",
+      "date": "2026-09-19T13:10:50",
+      "date_unixtime": "1789794650",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "media_type": "sticker",
+      "sticker_emoji": "🛠️",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 88,
+      "type": "message",
+      "date": "2026-09-19T19:15:01",
+      "date_unixtime": "1789816501",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "今天的构建又挂了，日志里全是 warning。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "type": "message",
+      "date": "2026-09-19T19:26:50",
+      "date_unixtime": "1789817210",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "type": "message",
+      "date": "2026-09-19T21:42:22",
+      "date_unixtime": "1789825342",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "type": "message",
+      "date": "2026-09-19T23:48:04",
+      "date_unixtime": "1789832884",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "type": "message",
+      "date": "2026-09-20T03:02:45",
+      "date_unixtime": "1789844565",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "type": "message",
+      "date": "2026-09-20T12:01:00",
+      "date_unixtime": "1789876860",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "本地跑没问题，CI 上就挂，玄学。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 76,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 100,
+      "type": "message",
+      "date": "2026-09-20T12:02:55",
+      "date_unixtime": "1789876975",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "刚发版，灰度 10%，先观察半小时。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 我先试试。"
+        }
+      ],
+      "reply_to_message_id": 92,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 102,
+      "type": "message",
+      "date": "2026-09-20T13:17:26",
+      "date_unixtime": "1789881446",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 104,
+      "type": "message",
+      "date": "2026-09-20T15:44:14",
+      "date_unixtime": "1789890254",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "type": "message",
+      "date": "2026-09-20T17:37:37",
+      "date_unixtime": "1789897057",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 101,
+      "type": "message",
+      "date": "2026-09-20T18:41:37",
+      "date_unixtime": "1789900897",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "media_type": "sticker",
+      "sticker_emoji": "😀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 105,
+      "type": "message",
+      "date": "2026-09-20T18:45:50",
+      "date_unixtime": "1789901150",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "type": "message",
+      "date": "2026-09-20T20:10:25",
+      "date_unixtime": "1789906225",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "type": "message",
+      "date": "2026-09-20T21:02:41",
+      "date_unixtime": "1789909361",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "type": "message",
+      "date": "2026-09-20T23:08:07",
+      "date_unixtime": "1789916887",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "type": "message",
+      "date": "2026-09-21T09:21:48",
+      "date_unixtime": "1789953708",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "type": "message",
+      "date": "2026-09-21T15:31:13",
+      "date_unixtime": "1789975873",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "刚发版，灰度 10%，先观察半小时。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "type": "message",
+      "date": "2026-09-21T18:54:25",
+      "date_unixtime": "1789988065",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "type": "message",
+      "date": "2026-09-21T20:41:50",
+      "date_unixtime": "1789994510",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 我先试试。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "type": "message",
+      "date": "2026-09-21T23:31:30",
+      "date_unixtime": "1790004690",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "新的监控面板上线了，错误率能实时看。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "type": "message",
+      "date": "2026-09-21T23:33:26",
+      "date_unixtime": "1790004806",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "刚发版，灰度 10%，先观察半小时。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "type": "message",
+      "date": "2026-09-22T09:57:31",
+      "date_unixtime": "1790042251",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "这个月活跃度明显上升了。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "type": "message",
+      "date": "2026-09-22T10:00:13",
+      "date_unixtime": "1790042413",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ],
+      "reply_to_message_id": 114,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "type": "message",
+      "date": "2026-09-22T11:11:13",
+      "date_unixtime": "1790046673",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "type": "message",
+      "date": "2026-09-22T14:14:47",
+      "date_unixtime": "1790057687",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "测试用例还差边界条件，我补一下。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "type": "message",
+      "date": "2026-09-22T20:08:21",
+      "date_unixtime": "1790078901",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "reply_to_message_id": 74,
+      "reply_to_peer_id": "user_alan",
+      "edited": true
+    },
+    {
+      "id": 117,
+      "type": "message",
+      "date": "2026-09-23T12:26:19",
+      "date_unixtime": "1790137579",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "media_type": "sticker",
+      "sticker_emoji": "🧪",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 118,
+      "type": "message",
+      "date": "2026-09-23T17:01:31",
+      "date_unixtime": "1790154091",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "type": "message",
+      "date": "2026-09-23T17:34:59",
+      "date_unixtime": "1790156099",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "type": "message",
+      "date": "2026-09-23T23:30:56",
+      "date_unixtime": "1790177456",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "type": "message",
+      "date": "2026-09-24T09:41:05",
+      "date_unixtime": "1790214065",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "type": "message",
+      "date": "2026-09-24T12:13:37",
+      "date_unixtime": "1790223217",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "type": "message",
+      "date": "2026-09-24T13:09:44",
+      "date_unixtime": "1790226584",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "type": "message",
+      "date": "2026-09-24T13:36:01",
+      "date_unixtime": "1790228161",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "type": "message",
+      "date": "2026-09-24T17:02:30",
+      "date_unixtime": "1790240550",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "type": "message",
+      "date": "2026-09-25T09:28:08",
+      "date_unixtime": "1790299688",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "周末有人一起看线上监控吗？ 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？ 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 106,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "type": "message",
+      "date": "2026-09-25T10:03:23",
+      "date_unixtime": "1790301803",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ],
+      "reply_to_message_id": 109,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 126,
+      "type": "message",
+      "date": "2026-09-25T18:49:08",
+      "date_unixtime": "1790333348",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "media_type": "sticker",
+      "sticker_emoji": "🎉",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 131,
+      "type": "message",
+      "date": "2026-09-25T19:11:00",
+      "date_unixtime": "1790334660",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "type": "message",
+      "date": "2026-09-25T19:20:51",
+      "date_unixtime": "1790335251",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "别急，先回滚，再定位。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。 这个优先级 P1。"
+        }
+      ],
+      "forwarded_from": "运维告警",
+      "forwarded_from_id": "channel_demo",
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 5,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "type": "message",
+      "date": "2026-09-25T20:07:09",
+      "date_unixtime": "1790338029",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "刚发版，灰度 10%，先观察半小时。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 100,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "type": "message",
+      "date": "2026-09-26T15:15:31",
+      "date_unixtime": "1790406931",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "media_type": "sticker",
+      "sticker_emoji": "🎉",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 137,
+      "type": "message",
+      "date": "2026-09-26T19:24:04",
+      "date_unixtime": "1790421844",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "type": "message",
+      "date": "2026-09-26T20:29:43",
+      "date_unixtime": "1790425783",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 133,
+      "type": "message",
+      "date": "2026-09-26T21:02:01",
+      "date_unixtime": "1790427721",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ],
+      "reply_to_message_id": 102,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 135,
+      "type": "message",
+      "date": "2026-09-26T21:28:03",
+      "date_unixtime": "1790429283",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "咖啡续命，今天第四杯了。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "type": "message",
+      "date": "2026-09-26T22:44:45",
+      "date_unixtime": "1790433885",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 103,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 144,
+      "type": "service",
+      "date": "2026-09-27T01:02:30",
+      "date_unixtime": "1790442150",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 143,
+      "type": "message",
+      "date": "2026-09-27T11:30:11",
+      "date_unixtime": "1790479811",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 117,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "type": "message",
+      "date": "2026-09-27T11:43:56",
+      "date_unixtime": "1790480636",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "type": "message",
+      "date": "2026-09-27T15:20:09",
+      "date_unixtime": "1790493609",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "今天的构建又挂了，日志里全是 warning。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "type": "message",
+      "date": "2026-09-27T15:58:43",
+      "date_unixtime": "1790495923",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "type": "message",
+      "date": "2026-09-27T17:08:40",
+      "date_unixtime": "1790500120",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "media_type": "sticker",
+      "sticker_emoji": "🔥",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 138,
+      "type": "message",
+      "date": "2026-09-27T23:53:09",
+      "date_unixtime": "1790524389",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ],
+      "reply_to_message_id": 131,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 147,
+      "type": "message",
+      "date": "2026-09-28T00:46:00",
+      "date_unixtime": "1790527560",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 5,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "type": "message",
+      "date": "2026-09-28T00:49:49",
+      "date_unixtime": "1790527789",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ],
+      "reply_to_message_id": 138,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 146,
+      "type": "message",
+      "date": "2026-09-28T13:10:59",
+      "date_unixtime": "1790572259",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "刚发版，灰度 10%，先观察半小时。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "type": "message",
+      "date": "2026-09-28T14:20:29",
+      "date_unixtime": "1790576429",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reply_to_message_id": 125,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 148,
+      "type": "message",
+      "date": "2026-09-28T20:58:16",
+      "date_unixtime": "1790600296",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "刚发版，灰度 10%，先观察半小时。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。"
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "type": "message",
+      "date": "2026-09-28T21:23:14",
+      "date_unixtime": "1790601794",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "type": "message",
+      "date": "2026-09-28T23:25:27",
+      "date_unixtime": "1790609127",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "type": "message",
+      "date": "2026-09-29T10:27:56",
+      "date_unixtime": "1790648876",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "type": "message",
+      "date": "2026-09-29T13:13:56",
+      "date_unixtime": "1790658836",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "type": "message",
+      "date": "2026-09-29T15:20:44",
+      "date_unixtime": "1790666444",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "type": "message",
+      "date": "2026-09-29T18:45:31",
+      "date_unixtime": "1790678731",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "type": "message",
+      "date": "2026-09-29T22:40:51",
+      "date_unixtime": "1790692851",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "type": "service",
+      "date": "2026-09-30T01:25:03",
+      "date_unixtime": "1790702703",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 163,
+      "type": "service",
+      "date": "2026-09-30T09:05:54",
+      "date_unixtime": "1790730354",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 164,
+      "type": "message",
+      "date": "2026-09-30T09:16:07",
+      "date_unixtime": "1790730967",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "需求评审改到明天下午三点。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "type": "message",
+      "date": "2026-09-30T09:59:24",
+      "date_unixtime": "1790733564",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "type": "message",
+      "date": "2026-09-30T11:19:40",
+      "date_unixtime": "1790738380",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "reply_to_message_id": 139,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 162,
+      "type": "message",
+      "date": "2026-09-30T15:55:35",
+      "date_unixtime": "1790754935",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "type": "message",
+      "date": "2026-09-30T18:16:15",
+      "date_unixtime": "1790763375",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "测试用例还差边界条件，我补一下。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。 有复现步骤吗？"
+        }
+      ],
+      "reply_to_message_id": 119,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 161,
+      "type": "message",
+      "date": "2026-09-30T23:29:23",
+      "date_unixtime": "1790782163",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "新的监控面板上线了，错误率能实时看。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 143,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 169,
+      "type": "message",
+      "date": "2026-10-01T02:12:02",
+      "date_unixtime": "1790791922",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "需求评审改到明天下午三点。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "type": "message",
+      "date": "2026-10-01T10:18:19",
+      "date_unixtime": "1790821099",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "type": "message",
+      "date": "2026-10-01T17:51:05",
+      "date_unixtime": "1790848265",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "media_type": "sticker",
+      "sticker_emoji": "📦",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 170,
+      "type": "message",
+      "date": "2026-10-01T19:15:20",
+      "date_unixtime": "1790853320",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "type": "message",
+      "date": "2026-10-01T22:00:49",
+      "date_unixtime": "1790863249",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "type": "message",
+      "date": "2026-10-01T22:12:56",
+      "date_unixtime": "1790863976",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "type": "message",
+      "date": "2026-10-01T22:22:07",
+      "date_unixtime": "1790864527",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "type": "message",
+      "date": "2026-10-02T09:30:13",
+      "date_unixtime": "1790904613",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ],
+      "reply_to_message_id": 172,
+      "reply_to_peer_id": "user_alan",
+      "edited": true
+    },
+    {
+      "id": 174,
+      "type": "message",
+      "date": "2026-10-02T12:52:23",
+      "date_unixtime": "1790916743",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "type": "message",
+      "date": "2026-10-02T14:20:37",
+      "date_unixtime": "1790922037",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "type": "message",
+      "date": "2026-10-02T16:06:22",
+      "date_unixtime": "1790928382",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "media_type": "sticker",
+      "sticker_emoji": "😀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 172,
+      "type": "message",
+      "date": "2026-10-02T20:38:22",
+      "date_unixtime": "1790944702",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "type": "message",
+      "date": "2026-10-02T21:34:45",
+      "date_unixtime": "1790948085",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "type": "message",
+      "date": "2026-10-03T09:17:48",
+      "date_unixtime": "1790990268",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "本地跑没问题，CI 上就挂，玄学。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "type": "service",
+      "date": "2026-10-03T11:56:56",
+      "date_unixtime": "1790999816",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 181,
+      "type": "message",
+      "date": "2026-10-03T12:38:12",
+      "date_unixtime": "1791002292",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "type": "message",
+      "date": "2026-10-03T13:39:09",
+      "date_unixtime": "1791005949",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "type": "message",
+      "date": "2026-10-03T17:30:15",
+      "date_unixtime": "1791019815",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "reply_to_message_id": 179,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 183,
+      "type": "message",
+      "date": "2026-10-03T18:49:24",
+      "date_unixtime": "1791024564",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ],
+      "reply_to_message_id": 155,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 5,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "type": "message",
+      "date": "2026-10-03T21:55:44",
+      "date_unixtime": "1791035744",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "type": "message",
+      "date": "2026-10-03T21:56:27",
+      "date_unixtime": "1791035787",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "type": "message",
+      "date": "2026-10-04T10:43:45",
+      "date_unixtime": "1791081825",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "type": "message",
+      "date": "2026-10-04T14:40:53",
+      "date_unixtime": "1791096053",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "type": "message",
+      "date": "2026-10-04T17:13:46",
+      "date_unixtime": "1791105226",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 5,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "type": "message",
+      "date": "2026-10-04T20:02:42",
+      "date_unixtime": "1791115362",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "type": "message",
+      "date": "2026-10-04T20:25:42",
+      "date_unixtime": "1791116742",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "这个接口超时是代理的问题，不是服务端。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "type": "message",
+      "date": "2026-10-04T21:51:04",
+      "date_unixtime": "1791121864",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "type": "message",
+      "date": "2026-10-04T22:17:11",
+      "date_unixtime": "1791123431",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "type": "message",
+      "date": "2026-10-05T00:06:24",
+      "date_unixtime": "1791129984",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "type": "message",
+      "date": "2026-10-05T11:00:35",
+      "date_unixtime": "1791169235",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "type": "message",
+      "date": "2026-10-05T16:54:56",
+      "date_unixtime": "1791190496",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "type": "message",
+      "date": "2026-10-05T18:03:50",
+      "date_unixtime": "1791194630",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reply_to_message_id": 192,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 198,
+      "type": "message",
+      "date": "2026-10-05T19:49:16",
+      "date_unixtime": "1791200956",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 收到。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "type": "message",
+      "date": "2026-10-05T20:43:22",
+      "date_unixtime": "1791204202",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 6,
+          "recent": []
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 193,
+      "type": "message",
+      "date": "2026-10-05T21:19:21",
+      "date_unixtime": "1791206361",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "type": "service",
+      "date": "2026-10-05T22:01:32",
+      "date_unixtime": "1791208892",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 200,
+      "type": "message",
+      "date": "2026-10-05T22:57:46",
+      "date_unixtime": "1791212266",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 207,
+      "type": "message",
+      "date": "2026-10-06T09:41:22",
+      "date_unixtime": "1791250882",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。 收到。"
+        }
+      ],
+      "reply_to_message_id": 175,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 204,
+      "type": "message",
+      "date": "2026-10-06T16:07:22",
+      "date_unixtime": "1791274042",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "media_type": "sticker",
+      "sticker_emoji": "🛠️",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 208,
+      "type": "message",
+      "date": "2026-10-06T18:02:40",
+      "date_unixtime": "1791280960",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "type": "message",
+      "date": "2026-10-06T18:23:10",
+      "date_unixtime": "1791282190",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 176,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 209,
+      "type": "message",
+      "date": "2026-10-06T18:23:35",
+      "date_unixtime": "1791282215",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "咖啡续命，今天第四杯了。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "type": "message",
+      "date": "2026-10-06T19:00:03",
+      "date_unixtime": "1791284403",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ],
+      "forwarded_from": "开源日报",
+      "forwarded_from_id": "channel_demo",
+      "edited": true
+    },
+    {
+      "id": 202,
+      "type": "message",
+      "date": "2026-10-06T20:44:51",
+      "date_unixtime": "1791290691",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 206,
+      "type": "message",
+      "date": "2026-10-06T22:00:46",
+      "date_unixtime": "1791295246",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "type": "message",
+      "date": "2026-10-07T09:38:15",
+      "date_unixtime": "1791337095",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ],
+      "reply_to_message_id": 204,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 212,
+      "type": "message",
+      "date": "2026-10-07T11:33:29",
+      "date_unixtime": "1791344009",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "type": "message",
+      "date": "2026-10-07T13:55:11",
+      "date_unixtime": "1791352511",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "type": "message",
+      "date": "2026-10-07T17:51:18",
+      "date_unixtime": "1791366678",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 216,
+      "type": "message",
+      "date": "2026-10-07T20:05:37",
+      "date_unixtime": "1791374737",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 218,
+      "type": "message",
+      "date": "2026-10-07T20:39:31",
+      "date_unixtime": "1791376771",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "type": "message",
+      "date": "2026-10-07T21:05:54",
+      "date_unixtime": "1791378354",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "type": "service",
+      "date": "2026-10-07T21:33:31",
+      "date_unixtime": "1791380011",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 210,
+      "type": "message",
+      "date": "2026-10-07T21:38:19",
+      "date_unixtime": "1791380299",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "type": "message",
+      "date": "2026-10-08T12:44:19",
+      "date_unixtime": "1791434659",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 220,
+      "type": "message",
+      "date": "2026-10-08T15:36:05",
+      "date_unixtime": "1791444965",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ],
+      "reply_to_message_id": 219,
+      "reply_to_peer_id": "user_alan",
+      "edited": true
+    },
+    {
+      "id": 221,
+      "type": "message",
+      "date": "2026-10-08T20:46:41",
+      "date_unixtime": "1791463601",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 222,
+      "type": "message",
+      "date": "2026-10-08T22:50:04",
+      "date_unixtime": "1791471004",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 226,
+      "type": "message",
+      "date": "2026-10-09T15:19:24",
+      "date_unixtime": "1791530364",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "type": "message",
+      "date": "2026-10-09T15:45:49",
+      "date_unixtime": "1791531949",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 225,
+      "type": "message",
+      "date": "2026-10-09T18:32:55",
+      "date_unixtime": "1791541975",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 224,
+      "type": "message",
+      "date": "2026-10-09T19:52:54",
+      "date_unixtime": "1791546774",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 237,
+      "type": "message",
+      "date": "2026-10-10T02:00:54",
+      "date_unixtime": "1791568854",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "reply_to_message_id": 234,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "type": "message",
+      "date": "2026-10-10T09:56:02",
+      "date_unixtime": "1791597362",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "type": "message",
+      "date": "2026-10-10T10:02:40",
+      "date_unixtime": "1791597760",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 233,
+      "type": "message",
+      "date": "2026-10-10T17:18:44",
+      "date_unixtime": "1791623924",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 236,
+      "type": "message",
+      "date": "2026-10-10T18:16:53",
+      "date_unixtime": "1791627413",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "type": "message",
+      "date": "2026-10-10T19:29:03",
+      "date_unixtime": "1791631743",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ],
+      "reply_to_message_id": 208,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 232,
+      "type": "message",
+      "date": "2026-10-10T19:36:11",
+      "date_unixtime": "1791632171",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ],
+      "reply_to_message_id": 206,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 231,
+      "type": "message",
+      "date": "2026-10-10T20:25:39",
+      "date_unixtime": "1791635139",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ],
+      "reply_to_message_id": 221,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 234,
+      "type": "message",
+      "date": "2026-10-10T21:25:24",
+      "date_unixtime": "1791638724",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。"
+        }
+      ],
+      "reply_to_message_id": 207,
+      "reply_to_peer_id": "user_alan",
+      "edited": true
+    },
+    {
+      "id": 227,
+      "type": "message",
+      "date": "2026-10-10T21:48:35",
+      "date_unixtime": "1791640115",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "依赖下载又超时，走代理吧。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "type": "message",
+      "date": "2026-10-10T22:00:01",
+      "date_unixtime": "1791640801",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "本地跑没问题，CI 上就挂，玄学。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 241,
+      "type": "message",
+      "date": "2026-10-11T09:41:15",
+      "date_unixtime": "1791682875",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ],
+      "reply_to_message_id": 207,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 243,
+      "type": "message",
+      "date": "2026-10-11T10:33:43",
+      "date_unixtime": "1791686023",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ],
+      "reply_to_message_id": 214,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 238,
+      "type": "message",
+      "date": "2026-10-11T12:34:19",
+      "date_unixtime": "1791693259",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "reply_to_message_id": 219,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 240,
+      "type": "message",
+      "date": "2026-10-11T13:59:31",
+      "date_unixtime": "1791698371",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ],
+      "reply_to_message_id": 231,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 239,
+      "type": "message",
+      "date": "2026-10-11T14:42:29",
+      "date_unixtime": "1791700949",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "依赖下载又超时，走代理吧。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 244,
+      "type": "message",
+      "date": "2026-10-11T15:38:39",
+      "date_unixtime": "1791704319",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 242,
+      "type": "message",
+      "date": "2026-10-11T20:31:24",
+      "date_unixtime": "1791721884",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "刚发版，灰度 10%，先观察半小时。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。 有复现步骤吗？"
+        }
+      ],
+      "reply_to_message_id": 240,
+      "reply_to_peer_id": "user_alan",
+      "edited": true
+    },
+    {
+      "id": 248,
+      "type": "message",
+      "date": "2026-10-12T01:38:41",
+      "date_unixtime": "1791740321",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 253,
+      "type": "message",
+      "date": "2026-10-12T09:09:51",
+      "date_unixtime": "1791767391",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 251,
+      "type": "message",
+      "date": "2026-10-12T09:34:59",
+      "date_unixtime": "1791768899",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "forwarded_from": "运维告警",
+      "forwarded_from_id": "channel_demo"
+    },
+    {
+      "id": 249,
+      "type": "message",
+      "date": "2026-10-12T10:04:55",
+      "date_unixtime": "1791770695",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 246,
+      "type": "message",
+      "date": "2026-10-12T10:17:23",
+      "date_unixtime": "1791771443",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ],
+      "reply_to_message_id": 220,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 245,
+      "type": "message",
+      "date": "2026-10-12T11:00:10",
+      "date_unixtime": "1791774010",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "这个接口超时是代理的问题，不是服务端。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。"
+        }
+      ]
+    },
+    {
+      "id": 247,
+      "type": "message",
+      "date": "2026-10-12T17:27:35",
+      "date_unixtime": "1791797255",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "type": "message",
+      "date": "2026-10-12T19:07:45",
+      "date_unixtime": "1791803265",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "文档我补完了，README 首屏记得放真实截图。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 250,
+      "type": "message",
+      "date": "2026-10-12T22:05:42",
+      "date_unixtime": "1791813942",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ],
+      "reply_to_message_id": 216,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 261,
+      "type": "message",
+      "date": "2026-10-13T03:16:52",
+      "date_unixtime": "1791832612",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "需求评审改到明天下午三点。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 254,
+      "type": "message",
+      "date": "2026-10-13T11:23:37",
+      "date_unixtime": "1791861817",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 257,
+      "type": "message",
+      "date": "2026-10-13T13:13:47",
+      "date_unixtime": "1791868427",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 256,
+      "type": "message",
+      "date": "2026-10-13T14:35:04",
+      "date_unixtime": "1791873304",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "type": "message",
+      "date": "2026-10-13T14:35:55",
+      "date_unixtime": "1791873355",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "reply_to_message_id": 238,
+      "reply_to_peer_id": "user_alan",
+      "forwarded_from": "运维告警",
+      "forwarded_from_id": "channel_demo"
+    },
+    {
+      "id": 260,
+      "type": "message",
+      "date": "2026-10-13T19:26:56",
+      "date_unixtime": "1791890816",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 259,
+      "type": "message",
+      "date": "2026-10-13T19:38:22",
+      "date_unixtime": "1791891502",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 262,
+      "type": "message",
+      "date": "2026-10-13T19:54:11",
+      "date_unixtime": "1791892451",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "本地跑没问题，CI 上就挂，玄学。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 253,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 258,
+      "type": "message",
+      "date": "2026-10-13T20:15:03",
+      "date_unixtime": "1791893703",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 270,
+      "type": "message",
+      "date": "2026-10-14T02:44:25",
+      "date_unixtime": "1791917065",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "type": "message",
+      "date": "2026-10-14T13:53:32",
+      "date_unixtime": "1791957212",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "type": "message",
+      "date": "2026-10-14T15:02:04",
+      "date_unixtime": "1791961324",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "type": "message",
+      "date": "2026-10-14T15:53:09",
+      "date_unixtime": "1791964389",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 263,
+      "type": "message",
+      "date": "2026-10-14T17:40:01",
+      "date_unixtime": "1791970801",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 266,
+      "type": "message",
+      "date": "2026-10-14T20:42:00",
+      "date_unixtime": "1791981720",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ],
+      "reply_to_message_id": 258,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 267,
+      "type": "message",
+      "date": "2026-10-14T21:14:20",
+      "date_unixtime": "1791983660",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "forwarded_from": "运维告警",
+      "forwarded_from_id": "channel_demo"
+    },
+    {
+      "id": 265,
+      "type": "message",
+      "date": "2026-10-14T21:53:05",
+      "date_unixtime": "1791985985",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "type": "message",
+      "date": "2026-10-14T22:20:40",
+      "date_unixtime": "1791987640",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "type": "message",
+      "date": "2026-10-15T11:19:58",
+      "date_unixtime": "1792034398",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 大家怎么看？"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 276,
+      "type": "message",
+      "date": "2026-10-15T12:00:36",
+      "date_unixtime": "1792036836",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 274,
+      "type": "message",
+      "date": "2026-10-15T14:27:41",
+      "date_unixtime": "1792045661",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "虚拟滚动要处理动态高度，不然会跳。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 278,
+      "type": "message",
+      "date": "2026-10-15T17:00:54",
+      "date_unixtime": "1792054854",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "type": "message",
+      "date": "2026-10-15T18:45:16",
+      "date_unixtime": "1792061116",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "type": "message",
+      "date": "2026-10-15T22:04:07",
+      "date_unixtime": "1792073047",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "测试用例还差边界条件，我补一下。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。 收到。"
+        }
+      ],
+      "reply_to_message_id": 274,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 273,
+      "type": "message",
+      "date": "2026-10-15T22:35:31",
+      "date_unixtime": "1792074931",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。"
+        }
+      ]
+    },
+    {
+      "id": 284,
+      "type": "message",
+      "date": "2026-10-16T09:35:28",
+      "date_unixtime": "1792114528",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "晚安，明天继续。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 286,
+      "type": "message",
+      "date": "2026-10-16T11:27:02",
+      "date_unixtime": "1792121222",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "咖啡续命，今天第四杯了。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。 有复现步骤吗？"
+        }
+      ],
+      "reply_to_message_id": 250,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 283,
+      "type": "message",
+      "date": "2026-10-16T11:51:42",
+      "date_unixtime": "1792122702",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "type": "message",
+      "date": "2026-10-16T15:19:14",
+      "date_unixtime": "1792135154",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。"
+        }
+      ]
+    },
+    {
+      "id": 282,
+      "type": "message",
+      "date": "2026-10-16T16:59:22",
+      "date_unixtime": "1792141162",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "media_type": "sticker",
+      "sticker_emoji": "🚀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 285,
+      "type": "message",
+      "date": "2026-10-16T18:40:26",
+      "date_unixtime": "1792147226",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "别急，先回滚，再定位。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 281,
+      "type": "message",
+      "date": "2026-10-16T20:01:15",
+      "date_unixtime": "1792152075",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "type": "message",
+      "date": "2026-10-16T22:06:26",
+      "date_unixtime": "1792159586",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ]
+    },
+    {
+      "id": 289,
+      "type": "message",
+      "date": "2026-10-17T09:22:19",
+      "date_unixtime": "1792200139",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "这个月活跃度明显上升了。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 293,
+      "type": "message",
+      "date": "2026-10-17T12:52:12",
+      "date_unixtime": "1792212732",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 290,
+      "type": "message",
+      "date": "2026-10-17T15:06:24",
+      "date_unixtime": "1792220784",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "type": "message",
+      "date": "2026-10-17T17:01:40",
+      "date_unixtime": "1792227700",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "type": "message",
+      "date": "2026-10-17T17:26:50",
+      "date_unixtime": "1792229210",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ]
+    },
+    {
+      "id": 287,
+      "type": "message",
+      "date": "2026-10-17T18:40:29",
+      "date_unixtime": "1792233629",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "虚拟滚动要处理动态高度，不然会跳。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 295,
+      "type": "message",
+      "date": "2026-10-17T19:45:15",
+      "date_unixtime": "1792237515",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。"
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "type": "message",
+      "date": "2026-10-17T20:06:58",
+      "date_unixtime": "1792238818",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "今天的构建又挂了，日志里全是 warning。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 291,
+      "type": "message",
+      "date": "2026-10-17T21:33:07",
+      "date_unixtime": "1792243987",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？ 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 294,
+      "type": "message",
+      "date": "2026-10-17T23:30:52",
+      "date_unixtime": "1792251052",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 297,
+      "type": "message",
+      "date": "2026-10-18T03:18:52",
+      "date_unixtime": "1792264732",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ],
+      "reply_to_message_id": 293,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 303,
+      "type": "message",
+      "date": "2026-10-18T09:35:33",
+      "date_unixtime": "1792287333",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "type": "message",
+      "date": "2026-10-18T11:20:28",
+      "date_unixtime": "1792293628",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "type": "message",
+      "date": "2026-10-18T11:46:20",
+      "date_unixtime": "1792295180",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "这个月活跃度明显上升了。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "type": "service",
+      "date": "2026-10-18T11:58:50",
+      "date_unixtime": "1792295930",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 302,
+      "type": "message",
+      "date": "2026-10-18T15:54:16",
+      "date_unixtime": "1792310056",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "type": "message",
+      "date": "2026-10-18T17:39:21",
+      "date_unixtime": "1792316361",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "type": "message",
+      "date": "2026-10-18T20:26:57",
+      "date_unixtime": "1792326417",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 已记录到待办。"
+        }
+      ],
+      "reply_to_message_id": 266,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 298,
+      "type": "message",
+      "date": "2026-10-18T20:38:55",
+      "date_unixtime": "1792327135",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "type": "message",
+      "date": "2026-10-18T20:53:52",
+      "date_unixtime": "1792328032",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ],
+      "reply_to_message_id": 280,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 305,
+      "type": "message",
+      "date": "2026-10-18T22:07:18",
+      "date_unixtime": "1792332438",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "type": "message",
+      "date": "2026-10-19T11:50:40",
+      "date_unixtime": "1792381840",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "type": "message",
+      "date": "2026-10-19T15:51:46",
+      "date_unixtime": "1792396306",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "type": "message",
+      "date": "2026-10-19T17:54:46",
+      "date_unixtime": "1792403686",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 314,
+      "type": "message",
+      "date": "2026-10-19T20:04:11",
+      "date_unixtime": "1792411451",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "需求评审改到明天下午三点。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "type": "message",
+      "date": "2026-10-19T22:11:22",
+      "date_unixtime": "1792419082",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "文档我补完了，README 首屏记得放真实截图。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 6,
+          "recent": []
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 312,
+      "type": "message",
+      "date": "2026-10-19T22:23:53",
+      "date_unixtime": "1792419833",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。"
+        }
+      ]
+    },
+    {
+      "id": 313,
+      "type": "message",
+      "date": "2026-10-19T23:45:41",
+      "date_unixtime": "1792424741",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "本地跑没问题，CI 上就挂，玄学。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "本地跑没问题，CI 上就挂，玄学。"
+        }
+      ]
+    },
+    {
+      "id": 318,
+      "type": "message",
+      "date": "2026-10-20T03:28:30",
+      "date_unixtime": "1792438110",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "别急，先回滚，再定位。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "type": "message",
+      "date": "2026-10-20T11:06:14",
+      "date_unixtime": "1792465574",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 320,
+      "type": "message",
+      "date": "2026-10-20T15:35:04",
+      "date_unixtime": "1792481704",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "虚拟滚动要处理动态高度，不然会跳。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。"
+        }
+      ]
+    },
+    {
+      "id": 319,
+      "type": "message",
+      "date": "2026-10-20T15:56:20",
+      "date_unixtime": "1792482980",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "type": "service",
+      "date": "2026-10-20T19:28:26",
+      "date_unixtime": "1792495706",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 321,
+      "type": "message",
+      "date": "2026-10-20T20:21:55",
+      "date_unixtime": "1792498915",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 317,
+      "type": "message",
+      "date": "2026-10-20T20:59:09",
+      "date_unixtime": "1792501149",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 315,
+      "type": "message",
+      "date": "2026-10-20T21:18:50",
+      "date_unixtime": "1792502330",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "刚发版，灰度 10%，先观察半小时。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。"
+        }
+      ],
+      "reply_to_message_id": 302,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 325,
+      "type": "message",
+      "date": "2026-10-21T00:50:40",
+      "date_unixtime": "1792515040",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今晚复盘放在 21:00，腾讯会议链接我发群里。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 327,
+      "type": "message",
+      "date": "2026-10-21T03:57:38",
+      "date_unixtime": "1792526258",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 328,
+      "type": "message",
+      "date": "2026-10-21T10:05:18",
+      "date_unixtime": "1792548318",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ],
+      "reply_to_message_id": 290,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 323,
+      "type": "message",
+      "date": "2026-10-21T12:45:23",
+      "date_unixtime": "1792557923",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 324,
+      "type": "message",
+      "date": "2026-10-21T15:31:51",
+      "date_unixtime": "1792567911",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "media_type": "sticker",
+      "sticker_emoji": "🚀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 326,
+      "type": "message",
+      "date": "2026-10-21T18:11:33",
+      "date_unixtime": "1792577493",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "type": "message",
+      "date": "2026-10-22T10:45:53",
+      "date_unixtime": "1792637153",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "这个接口超时是代理的问题，不是服务端。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。"
+        }
+      ]
+    },
+    {
+      "id": 329,
+      "type": "service",
+      "date": "2026-10-22T13:43:55",
+      "date_unixtime": "1792647835",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 330,
+      "type": "message",
+      "date": "2026-10-22T17:21:58",
+      "date_unixtime": "1792660918",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "虚拟滚动要处理动态高度，不然会跳。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。 这个优先级 P1。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 333,
+      "type": "message",
+      "date": "2026-10-22T18:46:35",
+      "date_unixtime": "1792665995",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "文档里的版本号要和 CHANGELOG 对上。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。 有复现步骤吗？"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 334,
+      "type": "message",
+      "date": "2026-10-22T19:06:12",
+      "date_unixtime": "1792667172",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ]
+    },
+    {
+      "id": 331,
+      "type": "message",
+      "date": "2026-10-22T21:37:49",
+      "date_unixtime": "1792676269",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ]
+    },
+    {
+      "id": 335,
+      "type": "message",
+      "date": "2026-10-22T22:52:44",
+      "date_unixtime": "1792680764",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 337,
+      "type": "message",
+      "date": "2026-10-23T00:19:13",
+      "date_unixtime": "1792685953",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 338,
+      "type": "message",
+      "date": "2026-10-23T10:43:22",
+      "date_unixtime": "1792723402",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个接口超时是代理的问题，不是服务端。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 339,
+      "type": "message",
+      "date": "2026-10-23T15:33:11",
+      "date_unixtime": "1792740791",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ]
+    },
+    {
+      "id": 340,
+      "type": "message",
+      "date": "2026-10-23T19:03:28",
+      "date_unixtime": "1792753408",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "新的监控面板上线了，错误率能实时看。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "新的监控面板上线了，错误率能实时看。"
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "type": "message",
+      "date": "2026-10-23T19:05:26",
+      "date_unixtime": "1792753526",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "type": "message",
+      "date": "2026-10-23T19:30:09",
+      "date_unixtime": "1792755009",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "media_type": "sticker",
+      "sticker_emoji": "☕️",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 342,
+      "type": "message",
+      "date": "2026-10-23T21:36:38",
+      "date_unixtime": "1792762598",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "依赖下载又超时，走代理吧。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 344,
+      "type": "message",
+      "date": "2026-10-24T01:03:36",
+      "date_unixtime": "1792775016",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ]
+    },
+    {
+      "id": 347,
+      "type": "message",
+      "date": "2026-10-24T12:06:24",
+      "date_unixtime": "1792814784",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "文档我补完了，README 首屏记得放真实截图。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "type": "message",
+      "date": "2026-10-24T14:49:50",
+      "date_unixtime": "1792824590",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "文档里的版本号要和 CHANGELOG 对上。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。"
+        }
+      ]
+    },
+    {
+      "id": 345,
+      "type": "message",
+      "date": "2026-10-24T15:17:17",
+      "date_unixtime": "1792826237",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 343,
+      "type": "message",
+      "date": "2026-10-24T15:26:23",
+      "date_unixtime": "1792826783",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。"
+        }
+      ]
+    },
+    {
+      "id": 349,
+      "type": "message",
+      "date": "2026-10-24T16:02:42",
+      "date_unixtime": "1792828962",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 346,
+      "type": "message",
+      "date": "2026-10-24T23:08:12",
+      "date_unixtime": "1792854492",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ]
+    },
+    {
+      "id": 354,
+      "type": "message",
+      "date": "2026-10-25T03:31:19",
+      "date_unixtime": "1792870279",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ]
+    },
+    {
+      "id": 358,
+      "type": "service",
+      "date": "2026-10-25T11:03:12",
+      "date_unixtime": "1792897392",
+      "action": "invite_members",
+      "actor": "老陈"
+    },
+    {
+      "id": 357,
+      "type": "message",
+      "date": "2026-10-25T17:35:25",
+      "date_unixtime": "1792920925",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。"
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "type": "message",
+      "date": "2026-10-25T19:19:37",
+      "date_unixtime": "1792927177",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "晚安，明天继续。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "晚安，明天继续。"
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "type": "message",
+      "date": "2026-10-25T20:19:16",
+      "date_unixtime": "1792930756",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "type": "message",
+      "date": "2026-10-25T20:23:52",
+      "date_unixtime": "1792931032",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。 有复现步骤吗？"
+        }
+      ],
+      "reply_to_message_id": 313,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 359,
+      "type": "message",
+      "date": "2026-10-25T21:19:43",
+      "date_unixtime": "1792934383",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "周末有人一起看线上监控吗？ 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？ 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "type": "service",
+      "date": "2026-10-25T22:09:30",
+      "date_unixtime": "1792937370",
+      "action": "set_title",
+      "actor": "阿岚",
+      "title": "深夜代码俱乐部 · 演示"
+    },
+    {
+      "id": 350,
+      "type": "message",
+      "date": "2026-10-25T22:19:07",
+      "date_unixtime": "1792937947",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "这个月活跃度明显上升了。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "type": "message",
+      "date": "2026-10-25T23:18:59",
+      "date_unixtime": "1792941539",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ]
+    },
+    {
+      "id": 364,
+      "type": "message",
+      "date": "2026-10-26T03:23:41",
+      "date_unixtime": "1792956221",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "media_type": "sticker",
+      "sticker_emoji": "🔥",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 362,
+      "type": "message",
+      "date": "2026-10-26T10:39:16",
+      "date_unixtime": "1792982356",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ],
+      "reply_to_message_id": 328,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 361,
+      "type": "service",
+      "date": "2026-10-26T11:12:14",
+      "date_unixtime": "1792984334",
+      "action": "join_by_link",
+      "actor": "松果"
+    },
+    {
+      "id": 360,
+      "type": "message",
+      "date": "2026-10-26T15:22:54",
+      "date_unixtime": "1792999374",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 363,
+      "type": "message",
+      "date": "2026-10-26T19:14:38",
+      "date_unixtime": "1793013278",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ]
+    },
+    {
+      "id": 366,
+      "type": "message",
+      "date": "2026-10-26T19:41:58",
+      "date_unixtime": "1793014918",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "reply_to_message_id": 347,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 367,
+      "type": "message",
+      "date": "2026-10-26T19:47:31",
+      "date_unixtime": "1793015251",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 368,
+      "type": "message",
+      "date": "2026-10-26T20:46:31",
+      "date_unixtime": "1793018791",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "type": "service",
+      "date": "2026-10-26T20:57:36",
+      "date_unixtime": "1793019456",
+      "action": "leave_chat",
+      "actor": "七喜"
+    },
+    {
+      "id": 371,
+      "type": "message",
+      "date": "2026-10-27T11:36:47",
+      "date_unixtime": "1793072207",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "type": "message",
+      "date": "2026-10-27T12:07:24",
+      "date_unixtime": "1793074044",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "media_type": "sticker",
+      "sticker_emoji": "🛠️",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 369,
+      "type": "message",
+      "date": "2026-10-27T14:58:22",
+      "date_unixtime": "1793084302",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "media_type": "sticker",
+      "sticker_emoji": "🎉",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 372,
+      "type": "message",
+      "date": "2026-10-27T19:23:07",
+      "date_unixtime": "1793100187",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "刚发版，灰度 10%，先观察半小时。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "刚发版，灰度 10%，先观察半小时。"
+        }
+      ],
+      "reply_to_message_id": 337,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 377,
+      "type": "message",
+      "date": "2026-10-28T09:03:17",
+      "date_unixtime": "1793149397",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 376,
+      "type": "message",
+      "date": "2026-10-28T15:55:22",
+      "date_unixtime": "1793174122",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "这个 Bug 我复现了，是时区导致的日期错位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个 "
+        },
+        {
+          "type": "bold",
+          "text": "Bug"
+        },
+        {
+          "type": "plain",
+          "text": " 我复现了，是时区导致的日期错位。"
+        }
+      ],
+      "reply_to_message_id": 357,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 373,
+      "type": "message",
+      "date": "2026-10-28T20:16:49",
+      "date_unixtime": "1793189809",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "数据导出的 CSV 用 Excel 打开会乱码，要加 BOM。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "数据导出的 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 用 Excel 打开会乱码，要加 BOM。"
+        }
+      ]
+    },
+    {
+      "id": 375,
+      "type": "message",
+      "date": "2026-10-28T22:30:37",
+      "date_unixtime": "1793197837",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 Telegram 导出的 JSON 脱敏后放进 examples 了。"
+        }
+      ]
+    },
+    {
+      "id": 374,
+      "type": "message",
+      "date": "2026-10-28T23:32:12",
+      "date_unixtime": "1793201532",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "咖啡续命，今天第四杯了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。"
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "type": "message",
+      "date": "2026-10-29T10:32:16",
+      "date_unixtime": "1793241136",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 378,
+      "type": "message",
+      "date": "2026-10-29T12:22:20",
+      "date_unixtime": "1793247740",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。"
+        }
+      ]
+    },
+    {
+      "id": 385,
+      "type": "message",
+      "date": "2026-10-29T14:32:02",
+      "date_unixtime": "1793255522",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ]
+    },
+    {
+      "id": 386,
+      "type": "message",
+      "date": "2026-10-29T15:44:49",
+      "date_unixtime": "1793259889",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "React 那个列表滚动还是卡，我准备换虚拟滚动。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "React"
+        },
+        {
+          "type": "plain",
+          "text": " 那个列表滚动还是卡，我准备换虚拟滚动。"
+        }
+      ]
+    },
+    {
+      "id": 379,
+      "type": "message",
+      "date": "2026-10-29T18:56:30",
+      "date_unixtime": "1793271390",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 382,
+      "type": "message",
+      "date": "2026-10-29T20:20:36",
+      "date_unixtime": "1793276436",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "type": "message",
+      "date": "2026-10-29T20:24:41",
+      "date_unixtime": "1793276681",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "media_type": "sticker",
+      "sticker_emoji": "🐛",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 383,
+      "type": "message",
+      "date": "2026-10-29T21:44:35",
+      "date_unixtime": "1793281475",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ]
+    },
+    {
+      "id": 381,
+      "type": "message",
+      "date": "2026-10-29T22:44:57",
+      "date_unixtime": "1793285097",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "这个月活跃度明显上升了。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个月活跃度明显上升了。"
+        }
+      ],
+      "reply_to_message_id": 355,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 388,
+      "type": "message",
+      "date": "2026-10-30T10:12:27",
+      "date_unixtime": "1793326347",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。 大家怎么看？"
+        }
+      ]
+    },
+    {
+      "id": 387,
+      "type": "message",
+      "date": "2026-10-30T11:03:26",
+      "date_unixtime": "1793329406",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 389,
+      "type": "message",
+      "date": "2026-10-30T18:06:31",
+      "date_unixtime": "1793354791",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ]
+    },
+    {
+      "id": 390,
+      "type": "message",
+      "date": "2026-10-30T18:57:11",
+      "date_unixtime": "1793357831",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "SQL 写完了，等 DBA  review。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。"
+        }
+      ],
+      "forwarded_from": "产品周报",
+      "forwarded_from_id": "channel_demo",
+      "reactions": [
+        {
+          "emoji": "👍",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 397,
+      "type": "message",
+      "date": "2026-10-31T13:52:00",
+      "date_unixtime": "1793425920",
+      "from": "青柠",
+      "from_id": "user_qingning",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 398,
+      "type": "message",
+      "date": "2026-10-31T19:00:22",
+      "date_unixtime": "1793444422",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "SQL 写完了，等 DBA  review。 收到。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "type": "message",
+      "date": "2026-10-31T19:38:20",
+      "date_unixtime": "1793446700",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "求一个可以把时间轴缩放做得顺滑的方案。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 394,
+      "type": "message",
+      "date": "2026-10-31T20:29:15",
+      "date_unixtime": "1793449755",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "别急，先回滚，再定位。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "别急，先回滚，再定位。"
+        }
+      ]
+    },
+    {
+      "id": 395,
+      "type": "message",
+      "date": "2026-10-31T21:05:52",
+      "date_unixtime": "1793451952",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "type": "message",
+      "date": "2026-10-31T21:12:48",
+      "date_unixtime": "1793452368",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 大家怎么看？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 大家怎么看？"
+        }
+      ],
+      "reply_to_message_id": 390,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 393,
+      "type": "message",
+      "date": "2026-10-31T21:38:34",
+      "date_unixtime": "1793453914",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ]
+    },
+    {
+      "id": 391,
+      "type": "message",
+      "date": "2026-10-31T21:42:15",
+      "date_unixtime": "1793454135",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "文档里的版本号要和 CHANGELOG 对上。 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档里的版本号要和 "
+        },
+        {
+          "type": "bold",
+          "text": "CHANGELOG"
+        },
+        {
+          "type": "plain",
+          "text": " 对上。 有复现步骤吗？"
+        }
+      ]
+    },
+    {
+      "id": 405,
+      "type": "message",
+      "date": "2026-11-01T01:53:01",
+      "date_unixtime": "1793469181",
+      "from": "大麦",
+      "from_id": "user_damai",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ]
+    },
+    {
+      "id": 406,
+      "type": "message",
+      "date": "2026-11-01T11:15:58",
+      "date_unixtime": "1793502958",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "media_type": "sticker",
+      "sticker_emoji": "📊",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 402,
+      "type": "message",
+      "date": "2026-11-01T14:53:06",
+      "date_unixtime": "1793515986",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "周末有人一起看线上监控吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 2,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 400,
+      "type": "message",
+      "date": "2026-11-01T14:57:31",
+      "date_unixtime": "1793516251",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。 我先试试。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。 我先试试。"
+        }
+      ],
+      "reply_to_message_id": 371,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 399,
+      "type": "message",
+      "date": "2026-11-01T17:01:20",
+      "date_unixtime": "1793523680",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 403,
+      "type": "message",
+      "date": "2026-11-01T17:31:08",
+      "date_unixtime": "1793525468",
+      "from": "小鱼",
+      "from_id": "user_xiaoyu",
+      "text": "Parquet 真的香，压缩比 CSV 小太多了。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "Parquet"
+        },
+        {
+          "type": "plain",
+          "text": " 真的香，压缩比 "
+        },
+        {
+          "type": "bold",
+          "text": "CSV"
+        },
+        {
+          "type": "plain",
+          "text": " 小太多了。"
+        }
+      ],
+      "reply_to_message_id": 377,
+      "reply_to_peer_id": "user_alan",
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 6,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 404,
+      "type": "message",
+      "date": "2026-11-01T17:58:25",
+      "date_unixtime": "1793527105",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "咖啡续命，今天第四杯了。 已记录到待办。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "咖啡续命，今天第四杯了。 已记录到待办。"
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "type": "message",
+      "date": "2026-11-01T18:00:59",
+      "date_unixtime": "1793527259",
+      "from": "木木",
+      "from_id": "user_mumu",
+      "media_type": "sticker",
+      "sticker_emoji": "😀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 401,
+      "type": "message",
+      "date": "2026-11-01T18:42:49",
+      "date_unixtime": "1793529769",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "我加了一个增量导入的去重键，重复跑不会脏数据。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我加了一个增量导入的去重键，重复跑不会脏数据。"
+        }
+      ]
+    },
+    {
+      "id": 408,
+      "type": "message",
+      "date": "2026-11-01T21:35:52",
+      "date_unixtime": "1793540152",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "分页 + 虚拟滚动，两个都要，用户会来回翻。"
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "type": "message",
+      "date": "2026-11-02T16:55:18",
+      "date_unixtime": "1793609718",
+      "from": "团子",
+      "from_id": "user_tuanzi",
+      "text": "今天的构建又挂了，日志里全是 warning。 我先试试。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "今天的构建又挂了，日志里全是 warning。 我先试试。"
+        }
+      ]
+    },
+    {
+      "id": 411,
+      "type": "message",
+      "date": "2026-11-02T17:15:57",
+      "date_unixtime": "1793610957",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "缓存命中率只有 62%，有点低。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "缓存命中率只有 62%，有点低。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🔥",
+          "count": 3,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 410,
+      "type": "message",
+      "date": "2026-11-02T21:49:39",
+      "date_unixtime": "1793627379",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "虚拟滚动要处理动态高度，不然会跳。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "虚拟滚动要处理动态高度，不然会跳。 收到。"
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "type": "message",
+      "date": "2026-11-02T23:11:03",
+      "date_unixtime": "1793632263",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "文档我补完了，README 首屏记得放真实截图。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "文档我补完了，"
+        },
+        {
+          "type": "bold",
+          "text": "README"
+        },
+        {
+          "type": "plain",
+          "text": " 首屏记得放真实截图。"
+        }
+      ],
+      "reply_to_message_id": 388,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 416,
+      "type": "message",
+      "date": "2026-11-03T11:24:02",
+      "date_unixtime": "1793676242",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "这个热力图颜色有点糊，能不能把色阶拉开一点？"
+        }
+      ]
+    },
+    {
+      "id": 417,
+      "type": "message",
+      "date": "2026-11-03T13:30:17",
+      "date_unixtime": "1793683817",
+      "from": "松果",
+      "from_id": "user_songguo",
+      "text": "依赖下载又超时，走代理吧。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "依赖下载又超时，走代理吧。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "👀",
+          "count": 4,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "type": "message",
+      "date": "2026-11-03T17:18:54",
+      "date_unixtime": "1793697534",
+      "from": "七喜",
+      "from_id": "user_qixi",
+      "text": "测试用例还差边界条件，我补一下。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "测试用例还差边界条件，我补一下。"
+        }
+      ]
+    },
+    {
+      "id": 418,
+      "type": "message",
+      "date": "2026-11-03T20:44:04",
+      "date_unixtime": "1793709844",
+      "from": "老陈",
+      "from_id": "user_laochen",
+      "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 收到。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "热力图里周三晚上是高峰，和我们发版节奏一致。 收到。"
+        }
+      ],
+      "reply_to_message_id": 402,
+      "reply_to_peer_id": "user_alan"
+    },
+    {
+      "id": 414,
+      "type": "message",
+      "date": "2026-11-03T22:29:50",
+      "date_unixtime": "1793716190",
+      "from": "小北",
+      "from_id": "user_beibei",
+      "text": "性能压测结果：5 万条消息，首屏 120ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "性能压测结果：5 万条消息，首屏 120ms。"
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": "🎉",
+          "count": 1,
+          "recent": []
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "type": "service",
+      "date": "2026-11-03T23:36:44",
+      "date_unixtime": "1793720204",
+      "action": "invite_members",
+      "actor": "老陈"
+    },
+    {
+      "id": 422,
+      "type": "message",
+      "date": "2026-11-04T09:40:07",
+      "date_unixtime": "1793756407",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "SQL 写完了，等 DBA  review。 这个优先级 P1。",
+      "text_entities": [
+        {
+          "type": "bold",
+          "text": "SQL"
+        },
+        {
+          "type": "plain",
+          "text": " 写完了，等 DBA  review。 这个优先级 P1。"
+        }
+      ]
+    },
+    {
+      "id": 419,
+      "type": "message",
+      "date": "2026-11-04T11:33:30",
+      "date_unixtime": "1793763210",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "text": "我把 SQLite 的索引加上了，查询从 800ms 降到 40ms。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "我把 "
+        },
+        {
+          "type": "bold",
+          "text": "SQLite"
+        },
+        {
+          "type": "plain",
+          "text": " 的索引加上了，查询从 800ms 降到 40ms。"
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "type": "message",
+      "date": "2026-11-04T12:36:54",
+      "date_unixtime": "1793767014",
+      "from": "山竹",
+      "from_id": "user_shanzhu",
+      "text": "需求评审改到明天下午三点。",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "需求评审改到明天下午三点。"
+        }
+      ]
+    },
+    {
+      "id": 424,
+      "type": "message",
+      "date": "2026-11-04T18:24:11",
+      "date_unixtime": "1793787851",
+      "from": "阿橘",
+      "from_id": "user_aju",
+      "text": "周末有人一起看线上监控吗？ 有复现步骤吗？",
+      "text_entities": [
+        {
+          "type": "plain",
+          "text": "周末有人一起看线上监控吗？ 有复现步骤吗？"
+        }
+      ],
+      "edited": true
+    },
+    {
+      "id": 420,
+      "type": "message",
+      "date": "2026-11-04T18:36:36",
+      "date_unixtime": "1793788596",
+      "from": "阿岚",
+      "from_id": "user_alan",
+      "media_type": "sticker",
+      "sticker_emoji": "🚀",
+      "file_name": "sticker.webp",
+      "text": ""
+    },
+    {
+      "id": 423,
+      "type": "service",
+      "date": "2026-11-04T20:28:50",
+      "date_unixtime": "1793795330",
+      "action": "invite_members",
+      "actor": "老陈"
+    }
+  ]
+}

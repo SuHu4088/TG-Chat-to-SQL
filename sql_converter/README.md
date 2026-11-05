@@ -3,17 +3,15 @@
 ## 📁 项目结构
 
 ```
-TG群聊转SQL/
-├── result.json                  # Telegram 导出的原始JSON文件
-├── sql_converter/               # 转换工作目录
-│   ├── result.json              # 复制的JSON文件（源数据）
-│   ├── json_to_sqlite.py        # JSON → SQLite 转换脚本
-│   ├── telegram_chat.db         # SQLite 数据库（转换产物）
-│   ├── verify_db.py             # 数据库验证脚本
+TG-Chat-to-SQL/
+├── sql_converter/               # 命令行工具
+│   ├── json_to_sqlite.py        # JSON → SQLite 增量导入
+│   ├── export_data.py           # SQLite → CSV / Parquet
+│   ├── verify_db.py             # 去重与完整性校验
 │   └── README.md                # 本文档
 ```
 
-## 🗄️ 数据库设计
+## 🗄️ 数据库设计（Schema v2）
 
 ### 表结构
 
@@ -23,55 +21,66 @@ TG群聊转SQL/
 | id | INTEGER PK | 自增主键 |
 | chat_name | TEXT NOT NULL | 群组名称 |
 | chat_type | TEXT NOT NULL | 群组类型（private_supergroup 等） |
-| chat_id | TEXT NOT NULL | 群组ID |
+| chat_id | TEXT NOT NULL UNIQUE | 群组ID |
 
 #### messages - 消息表
 | 字段 | 类型 | 说明 |
 |------|------|------|
-| id | INTEGER PK | 消息ID（来自Tele导出） |
-| chat_id | TEXT | 发送者/操作者ID |
+| row_id | INTEGER PK | 自增物理主键 |
+| message_key | TEXT UNIQUE | 去重键 `chat_id:message_id` |
+| id | INTEGER | Telegram 群内消息 ID |
+| chat_id | TEXT | 群组 ID |
 | message_type | TEXT | 消息类型：`message` / `service` |
 | date | TEXT | 日期时间 ISO8601 格式 |
 | date_unixtime | INTEGER | Unix时间戳 |
 | sender_name | TEXT | 发送者昵称（可为null） |
 | sender_id | TEXT | 发送者ID（格式：user数字ID） |
 | text_content | TEXT | 消息文本内容 |
-| reply_to_message_id | INTEGER | 回复目标消息ID |
+| reply_to_message_id | INTEGER | 回复目标消息ID（群内序号） |
 | forwarded_from | TEXT | 转发来源昵称 |
 | media_type | TEXT | 媒体类型（sticker等） |
 | raw_json | TEXT | 原始JSON完整数据（兜底字段） |
+| content_hash | TEXT | 内容哈希，用于辅助校验 |
 
 #### text_entities - 文本实体表
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | id | INTEGER PK | 自增主键 |
-| message_id | INTEGER FK | 关联消息ID → messages.id |
+| message_key | TEXT FK | 关联 `messages.message_key` |
 | entity_type | TEXT | 实体类型：plain / emoji / bold / code 等 |
 | entity_text | TEXT | 实体文本内容 |
 
 ### 索引
 ```sql
+CREATE UNIQUE INDEX uq_messages_message_key ON messages(message_key);
 CREATE INDEX idx_messages_chat_id ON messages(chat_id);
 CREATE INDEX idx_messages_sender_id ON messages(sender_id);
 CREATE INDEX idx_messages_date ON messages(date_unixtime);
-CREATE INDEX idx_entities_message_id ON text_entities(message_id);
+CREATE INDEX idx_entities_message_key ON text_entities(message_key);
 ```
-
-## 📊 当前数据统计
-- 消息总数：21,956 条
-- 普通消息：21,953 条
-- 服务消息：3 条
-- 贴纸消息：2,646 条
-- 有回复的消息：8,218 条
-- 转发消息：91 条
-- 文本实体：22,808 个
 
 ## 🛠️ 快速开始
 
-### 运行转换
+### 运行转换（增量导入）
 ```bash
 cd sql_converter
-python json_to_sqlite.py
+python json_to_sqlite.py --json ../result.json --db telegram_chat.db
+```
+
+重复执行同一命令会显示 `新增 0 / 跳过重复 N`，数据库总数不变。
+
+### 导出 CSV / Parquet
+```bash
+python export_data.py --db telegram_chat.db --format csv --output messages.csv
+python export_data.py --db telegram_chat.db --format parquet --output messages.parquet \
+  --start 2026-01-01 --end 2026-03-01
+```
+
+Parquet 需要 `pip install pyarrow`；未安装时会给出明确提示并返回退出码 3。
+
+### 校验数据库
+```bash
+python verify_db.py --db telegram_chat.db
 ```
 
 ### 连接数据库查询
@@ -103,14 +112,15 @@ cursor.execute("""
     ORDER BY date_unixtime
 """, (起始时间戳, 结束时间戳))
 
-# 查询回复链
+# 查询回复链（显式带 chat_id，避免跨群同 ID 歧义）
 cursor.execute("""
     SELECT m1.id, m1.text_content, m2.text_content AS reply_text
     FROM messages m1
-    LEFT JOIN messages m2 ON m1.reply_to_message_id = m2.id
-    WHERE m1.reply_to_message_id IS NOT NULL
+    LEFT JOIN messages m2
+      ON m1.chat_id = m2.chat_id AND m1.reply_to_message_id = m2.id
+    WHERE m1.chat_id = ? AND m1.reply_to_message_id IS NOT NULL
     LIMIT 100
-""")
+""", ('群组ID',))
 
 conn.close()
 ```
@@ -145,13 +155,13 @@ ORDER BY m.date_unixtime;
 
 #### 4. 获取完整的消息上下文（含实体）
 ```sql
-SELECT m.id, m.sender_name, m.text_content, 
+SELECT m.message_key, m.id, m.sender_name, m.text_content, 
        m.date, m.media_type,
        GROUP_CONCAT(e.entity_type || ':' || e.entity_text, ' | ') AS entities
 FROM messages m
-LEFT JOIN text_entities e ON m.id = e.message_id
-WHERE m.id = 12345
-GROUP BY m.id;
+LEFT JOIN text_entities e ON m.message_key = e.message_key
+WHERE m.chat_id = ? AND m.id = 12345
+GROUP BY m.message_key;
 ```
 
 #### 5. 查找转发消息及来源

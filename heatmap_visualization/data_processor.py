@@ -1,7 +1,8 @@
+import argparse
 import json
 import os
 import re
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
 from collections import Counter, defaultdict
 
 try:
@@ -229,13 +230,15 @@ def build_daily_details(messages):
                 'hour_counts': [0] * 24,
                 'keywords': Counter(),
                 'message_count': 0,
-                'users': set()
+                'users': set(),
+                'user_message_counts': Counter()
             }
         hour_idx = dt.hour
         daily[date_key]['hour_counts'][hour_idx] += 1
         daily[date_key]['message_count'] += 1
         sender = msg.get('from') or msg.get('actor') or '未知'
         daily[date_key]['users'].add(sender)
+        daily[date_key]['user_message_counts'][sender] += 1
         text = extract_text(msg)
         if text:
             tokens = simple_tokenize(text)
@@ -251,7 +254,8 @@ def build_daily_details(messages):
             'keywords': dict(info['keywords'].most_common(50)),
             'message_count': info['message_count'],
             'user_count': len(info['users']),
-            'users': sorted(info['users'])
+            'users': sorted(info['users']),
+            'user_message_counts': dict(info['user_message_counts'].most_common())
         }
 
     return result
@@ -298,9 +302,21 @@ def build_time_period_stats(messages):
     return stats
 
 
-def main():
-    print(f"读取JSON文件: {INPUT_JSON}")
-    data = load_data(INPUT_JSON)
+def main(argv=None):
+    parser = argparse.ArgumentParser(description='把 Telegram 导出 JSON 聚合为热力图所需的 processed_data.json')
+    parser.add_argument('--input', default=INPUT_JSON, help='输入 JSON（默认 result.json）')
+    parser.add_argument('--output', default=OUTPUT_JSON, help='输出 JSON（默认 processed_data.json）')
+    parser.add_argument('--top-users', type=int, default=20, help='活跃用户排行数量（默认 20）')
+    args = parser.parse_args(argv)
+
+    input_json = os.path.abspath(args.input)
+    output_json = os.path.abspath(args.output)
+    if not os.path.exists(input_json):
+        print(f"错误: 找不到 JSON 文件 {input_json}")
+        return 1
+
+    print(f"读取JSON文件: {input_json}")
+    data = load_data(input_json)
 
     messages = data.get('messages', [])
     print(f"消息总数: {len(messages)}")
@@ -319,7 +335,7 @@ def main():
     daily_details = build_daily_details(messages)
 
     print("正在统计活跃用户...")
-    top_users = build_top_users(messages)
+    top_users = build_top_users(messages, args.top_users)
 
     print("正在统计时段特征...")
     time_stats = build_time_period_stats(messages)
@@ -330,7 +346,8 @@ def main():
             'chat_type': data.get('type', ''),
             'chat_id': data.get('id', ''),
             'total_messages': len(messages),
-            'generated_at': datetime.now().isoformat()
+            'generated_at': datetime.now().isoformat(),
+            'source_file': os.path.basename(input_json),
         },
         'activity_heatmap': activity_heatmap,
         'topic_heatmap': topic_heatmap,
@@ -340,11 +357,11 @@ def main():
         'time_period_stats': time_stats
     }
 
-    with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
+    with open(output_json, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2, default=str)
 
     print(f"\n数据处理完成!")
-    print(f"输出文件: {OUTPUT_JSON}")
+    print(f"输出文件: {output_json}")
 
     total_active = sum(1 for v in activity_heatmap.values() if v > 0)
     max_activity = max(activity_heatmap.values()) if activity_heatmap else 0
@@ -365,6 +382,8 @@ def main():
             keywords = ', '.join([f'{w}({c})' for w, c in info['top_keywords'][:5]])
             print(f"    热门词: {keywords}")
 
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())
