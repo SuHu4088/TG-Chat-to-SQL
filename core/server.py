@@ -9,6 +9,7 @@ import os
 import threading
 import time
 import uuid
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Dict, Optional, Tuple
 from urllib.parse import parse_qs, urlparse
@@ -39,6 +40,42 @@ class AppState:
         self.backups = BackupManager(self.db_path, paths.backup_dir())
         self.lock = threading.RLock()
         self.jobs: Dict[str, Dict] = {}
+        self.backup_interval = int(os.environ.get("TGCHAT_BACKUP_INTERVAL_SECONDS", 6 * 3600))
+        self._auto_backup_stop = threading.Event()
+
+    # ------------------------------------------------------------------
+    # 定期快照：按间隔自动创建，已有同间隔内快照则跳过
+    # ------------------------------------------------------------------
+    def start_auto_snapshot(self):
+        def loop():
+            while not self._auto_backup_stop.is_set():
+                try:
+                    if self._needs_snapshot():
+                        with self.lock:
+                            manifest = self.backups.create("auto")
+                        log.info("自动快照完成：%s", manifest["name"])
+                except Exception:
+                    log.exception("自动快照失败")
+                self._auto_backup_stop.wait(self.backup_interval)
+
+        threading.Thread(target=loop, name="auto-snapshot", daemon=True).start()
+
+    def stop_auto_snapshot(self):
+        self._auto_backup_stop.set()
+
+    def _needs_snapshot(self) -> bool:
+        if not os.path.exists(self.db_path) or os.path.getsize(self.db_path) < 8192:
+            return False
+        items = self.backups.list()
+        if not items:
+            return True
+        newest = items[0].get("created_at") or ""
+        try:
+            newest_ts = datetime.strptime(newest, "%Y-%m-%d %H:%M:%S").timestamp()
+        except ValueError:
+            return True
+        return (time.time() - newest_ts) >= self.backup_interval
+
 
     # ------------------------------------------------------------------
     def reopen(self):
@@ -309,6 +346,7 @@ def make_handler(state: AppState):
 def create_server(db_path: Optional[str] = None, host: str = "127.0.0.1",
                   port: int = 0) -> Tuple[ThreadingHTTPServer, AppState]:
     state = AppState(db_path)
+    state.start_auto_snapshot()
     server = ThreadingHTTPServer((host, port), make_handler(state))
     server.daemon_threads = True
     return server, state

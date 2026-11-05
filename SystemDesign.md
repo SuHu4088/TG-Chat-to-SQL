@@ -114,7 +114,8 @@ message_key = f"{chat_id}:{message_id}"
 - 清单：`.manifest.json` 记录 `sha256 / size_bytes / chats / messages / schema_version / created_at`；
 - 校验：sha256 对比 + `PRAGMA integrity_check` + 去重键与孤儿实体校验；
 - 恢复：确认短语必须为 `RESTORE <name>`；先校验快照 → 自动创建 `pre-restore` 快照 → 复制到临时文件并再次校验 → 删除 `-wal/-shm` → `os.replace` 原子替换；
-- 保留：最近 10 个 + 总大小 2 GB，超限从最旧清理。
+- 保留：最近 10 个 + 总大小 2 GB，超限从最旧清理；
+- 定期：后台线程每 6 小时检查一次（`TGCHAT_BACKUP_INTERVAL_SECONDS` 可覆盖），若最新快照早于间隔则创建 `auto` 快照；空库跳过。
 
 ## 7. 删除权限闸门
 

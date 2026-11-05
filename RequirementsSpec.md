@@ -55,7 +55,7 @@ Telegram 导出 JSON → 统一 SQLite（多群分区、增量去重）→ 桌�
 
 | 编号 | 需求 | 验收标准 |
 |------|------|----------|
-| FR-20 | 备份 | 支持手动快照；每次快照生成 `.manifest.json`（sha256 / 大小 / 群数 / 消息数 / schema 版本） |
+| FR-20 | 备份 | 支持手动快照，并每 6 小时自动快照（间隔可用 `TGCHAT_BACKUP_INTERVAL_SECONDS` 调整）；每次快照生成 `.manifest.json`（sha256 / 大小 / 群数 / 消息数 / schema 版本） |
 | FR-21 | 恢复校验 | 恢复前必须通过 sha256 + `PRAGMA integrity_check` + 去重键校验；失败即中止 |
 | FR-22 | 恢复二次确认 | 必须输入 `RESTORE <快照名>` 才执行；恢复前自动创建 `pre-restore` 快照 |
 | FR-23 | 保留策略 | 默认保留最近 10 个；总大小上限 2 GB；超限从最旧清理 |

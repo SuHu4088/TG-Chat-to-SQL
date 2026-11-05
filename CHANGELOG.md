@@ -10,7 +10,7 @@
 - **`TG Chat Studio.app`（arm64）**：`scripts/build_app.py` 通过 PyInstaller 打包，内置 Python 运行时，双击即可运行；纯代码生成应用图标（`scripts/make_icon.py`）。
 - **统一多群库（Schema v3）**：新增 `chats` 表；`messages.chat_id` 分区；`(chat_id, date_unixtime, row_id)` / `(chat_id, id)` / `(chat_id, sender_name)` 复合索引。
 - **群管理**：群列表、切换、重命名、受控删除、每群统计、每群导入记录。
-- **备份与回滚**：`core/backup.py` 支持手动快照、`.manifest.json`（sha256/大小/群数/消息数/schema）、恢复前完整性校验、`RESTORE <name>` 二次确认、恢复前自动 `pre-restore` 快照、保留策略（最近 10 个 / 总 2 GB）。
+- **备份与回滚**：`core/backup.py` 支持手动快照与每 6 小时自动快照（`TGCHAT_BACKUP_INTERVAL_SECONDS` 可调）、`.manifest.json`（sha256/大小/群数/消息数/schema）、恢复前完整性校验、`RESTORE <name>` 二次确认、恢复前自动 `pre-restore` 快照、保留策略（最近 10 个 / 总 2 GB）。
 - **删除权限闸门**：`core/security.py`，`delete_enabled` 默认 0；`ENABLE DELETE` 授权；可撤销；`audit_log` 表 + `logs/audit.jsonl` 双写，被拒绝的尝试也记录。
 - **本地 HTTP API**：`core/server.py`，仅监听 `127.0.0.1`；桌面 App、浏览器调试、Playwright 验收共用。
 - **流式导入**：`core/importer.py` 逐条 `raw_decode`，批量 500 条去重写入；导入峰值内存从 1.21 GiB 降到 35.6 MB。

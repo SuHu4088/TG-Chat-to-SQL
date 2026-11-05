@@ -244,6 +244,7 @@ class AppDelegate(NSObject):
             if getattr(self, "_server", None) is not None:
                 self._server.shutdown()
             if getattr(self, "_state", None) is not None:
+                self._state.stop_auto_snapshot()
                 self._state.db.close()
             log.info("已退出")
         except Exception:

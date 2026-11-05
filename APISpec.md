@@ -126,7 +126,7 @@ create_server(db_path, host="127.0.0.1", port=0) -> (ThreadingHTTPServer, AppSta
 serve_forever(db_path, host, port)
 ```
 
-`AppState` 持有 `db / security / backups / lock / jobs`；导入在后台线程使用独立连接，避免 SQLite 跨线程问题。
+`AppState` 持有 `db / security / backups / lock / jobs`；导入在后台线程使用独立连接，避免 SQLite 跨线程问题。`create_server()` 会启动自动快照线程（默认间隔 6 小时，可用 `TGCHAT_BACKUP_INTERVAL_SECONDS` 覆盖）。
 
 ## 3. 命令行接口
 
