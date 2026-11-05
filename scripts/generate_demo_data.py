@@ -80,7 +80,9 @@ def build_text_entities(text, rng):
     return entities
 
 
-def generate(target_messages: int, days: int, seed: int):
+def generate(target_messages: int, days: int, seed: int,
+             name: str = '深夜代码俱乐部 · 演示', chat_id: int = 1234567890,
+             chat_type: str = 'private_group'):
     rng = random.Random(seed)
     end_date = datetime(2026, 11, 4, 23, 0, 0)
     start_date = end_date - timedelta(days=days - 1)
@@ -121,7 +123,7 @@ def generate(target_messages: int, days: int, seed: int):
                 message_id += 1
                 continue
 
-            name, user_id = rng.choice(USERS)
+            sender_name, user_id = rng.choice(USERS)
             roll = rng.random()
             if roll < 0.06:
                 msg = {
@@ -129,7 +131,7 @@ def generate(target_messages: int, days: int, seed: int):
                     'type': 'message',
                     'date': dt.isoformat(),
                     'date_unixtime': str(int(dt.timestamp())),
-                    'from': name,
+                    'from': sender_name,
                     'from_id': user_id,
                     'media_type': 'sticker',
                     'sticker_emoji': rng.choice(STICKER_EMOJI),
@@ -149,14 +151,14 @@ def generate(target_messages: int, days: int, seed: int):
                     'type': 'message',
                     'date': dt.isoformat(),
                     'date_unixtime': str(int(dt.timestamp())),
-                    'from': name,
+                    'from': sender_name,
                     'from_id': user_id,
                     'text': base,
                     'text_entities': entities,
                 }
 
                 if rng.random() < 0.2:
-                    candidates = [m for m in messages[-40:] if m.get('type') == 'message' and m.get('from') != name]
+                    candidates = [m for m in messages[-40:] if m.get('type') == 'message' and m.get('from') != sender_name]
                     if candidates:
                         reply = rng.choice(candidates)
                         msg['reply_to_message_id'] = reply['id']
@@ -181,9 +183,9 @@ def generate(target_messages: int, days: int, seed: int):
     messages.sort(key=lambda m: (m['date'], m['id']))
 
     return {
-        'name': '深夜代码俱乐部 · 演示',
-        'type': 'private_group',
-        'id': 1234567890,
+        'name': name,
+        'type': chat_type,
+        'id': chat_id,
         'messages': messages,
     }
 
@@ -194,11 +196,40 @@ def main():
     parser.add_argument('--days', type=int, default=60, help='覆盖天数')
     parser.add_argument('--seed', type=int, default=20261105, help='随机种子')
     parser.add_argument('--out', default='examples/demo_chat.json', help='输出路径')
+    parser.add_argument('--chats', type=int, default=1, help='生成多个群组（写入 --out 所在目录）')
     args = parser.parse_args()
+
+    import os
+
+    if args.chats > 1:
+        out_dir = os.path.dirname(os.path.abspath(args.out)) or '.'
+        os.makedirs(out_dir, exist_ok=True)
+        names = [
+            '深夜代码俱乐部 · 演示', '周末骑行小队 · 演示', '产品需求评审 · 演示',
+            '家庭日常 · 演示', '读书会 · 演示', '摄影外拍 · 演示',
+            '实习交流 · 演示', '游戏开黑 · 演示', '开源维护 · 演示', '旅行计划 · 演示',
+        ]
+        total = 0
+        for index in range(args.chats):
+            name = names[index % len(names)]
+            data = generate(
+                args.messages,
+                args.days,
+                args.seed + index * 17,
+                name=name,
+                chat_id=1234567800 + index,
+                chat_type='private_group' if index % 2 == 0 else 'public_group',
+            )
+            path = os.path.join(out_dir, f'demo_chat_{index + 1}.json')
+            with open(path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            total += len(data['messages'])
+            print(f'已生成 {len(data["messages"]):,} 条虚构消息（{name}）-> {path}')
+        print(f'合计 {total:,} 条虚构消息')
+        return
 
     data = generate(args.messages, args.days, args.seed)
 
-    import os
     out_dir = os.path.dirname(os.path.abspath(args.out))
     os.makedirs(out_dir, exist_ok=True)
     with open(args.out, 'w', encoding='utf-8') as f:

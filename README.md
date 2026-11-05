@@ -1,117 +1,99 @@
-# TG-Chat-to-SQL
+# TG Chat Studio（TG-Chat-to-SQL）
 
-> Telegram 群聊导出 JSON → SQLite：增量导入、CSV / Parquet 导出、可交互时间轴热力图，以及能流畅浏览几万条消息的虚拟滚动聊天查看器。
+> 把 Telegram 群聊导出的 `result.json` 变成一个可查询、可备份、可浏览的本地聊天数据库。
+> macOS 原生毛玻璃桌面应用，默认深色，20 万条消息下滚动依然流畅。
 
-Telegram Desktop 可以把群组聊天导出成 JSON，但原始 JSON 不适合查询和分析。本项目把这条链路一次做通：
+**JSON → SQLite（统一库、多群分区、增量去重）→ 桌面查看器 / 热力图 → CSV / Parquet**
 
-**JSON → SQLite（去重增量）→ CSV / Parquet → 热力图 / 时间轴 → Telegram 风格聊天查看器**
-
-![热力图与时间轴](docs/screenshots/heatmap-timeline.png)
-
-![聊天查看器与虚拟滚动](docs/screenshots/chat-viewer-virtual.png)
+![TG Chat Studio 主界面](docs/screenshots/app-window-v1.2.0.png)
 
 ## 核心能力
 
-| 能力 | 说明 |
-|------|------|
-| 增量导入 | 去重键 `chat_id:message_id`，重复导入 0 新增；旧版数据库自动迁移 |
-| 多群共存 | Telegram 消息 ID 只是群内序号，不同群相同 ID 不会互相覆盖 |
-| 数据导出 | CSV（Excel 友好，UTF-8 BOM）与 Parquet（数据分析友好），支持群组 / 日期过滤 |
-| 可交互时间轴 | 每日趋势图支持滑块缩放、滚轮缩放、近 7 / 30 / 90 天快捷区间；统计、关键词、时段、用户榜同步联动 |
-| 大数据浏览 | 分页 + 虚拟滚动 + 动态高度测量，只渲染可视窗口；9,441 条消息时 DOM 中约 15 个消息节点 |
-| 可视化 | 7×24 活跃度热力图、话题热力图、时段画像、用户排行 |
-| 隐私 | 全本地处理，不上传任何数据；真实 `*.json` / `*.db` 已被 `.gitignore` 排除 |
-| 离线可用 | ECharts 已内置于 `heatmap_visualization/vendor/`，无需外网 CDN |
+| 能力 | V1.2.0 说明 |
+|------|-------------|
+| 双击即用 | macOS arm64 `.app`，内置 Python 运行时，不需要装 Python、不需要命令行 |
+| 真实毛玻璃 | AppKit `NSVisualEffectView`（`behindWindow`）采样桌面内容，不是纯色背景假装玻璃 |
+| 默认深色 | 强制 `NSAppearanceNameDarkAqua`，不跟随系统浅色设置 |
+| 统一多群库 | 单个 `.db`，`chats` 表 + `messages.chat_id` 分区 + 复合索引 |
+| 群管理 | 群列表、切换、重命名、删除、每群统计、每群导入记录 |
+| 增量去重 | 唯一键 `chat_id:message_id`，重复导入新增 0 条 |
+| 流式导入 | 逐个解析 `messages` 数组，内存占用与文件大小基本无关 |
+| 大数据浏览 | 服务端分页 + 前端虚拟滚动 + 动态高度测量，只渲染可视窗口 |
+| 备份与回滚 | 手动/定期快照、sha256 + `integrity_check` 校验、恢复二次确认、保留策略 |
+| 删除闸门 | 启动时无删除能力，输入确认短语后才授权；可撤销；全程审计日志 |
+| 可视化 | 7×24 活跃度热力图、每日趋势（可缩放时间轴）、用户排行 |
+| 隐私 | 全本地处理，不上传；真实数据文件已被 `.gitignore` 排除 |
 
 ## 快速开始
 
-环境要求：Python 3.9+（GUI 仅依赖标准库）。
+### 方式一：下载 `.app`
+
+1. 从 [Releases](https://github.com/SuHu4088/TG-Chat-to-SQL/releases) 下载 `TG-Chat-Studio-v1.2.0-arm64.zip`；
+2. 解压后把 `TG Chat Studio.app` 拖到「应用程序」；
+3. 首次打开如提示「无法验证开发者」，右键 → 打开，或在终端执行：
+
+```bash
+xattr -d com.apple.quarantine "/Applications/TG Chat Studio.app"
+```
+
+> 本版本为 ad-hoc 签名、未做 Apple 公证。原因是公证需要付费开发者账号与凭据，属于必须由项目所有者拍板的事项，已在「遗留项」中说明。
+
+### 方式二：源码运行
 
 ```bash
 git clone https://github.com/SuHu4088/TG-Chat-to-SQL.git
 cd TG-Chat-to-SQL
-
-# 可选依赖：jieba（更准确的中文分词）、pyarrow（Parquet 导出）
-pip install -r requirements.txt
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python -m app.main          # 原生窗口
+python3 -m core.server --port 8765    # 或者只开浏览器调试模式
 ```
 
-### 1. 导入 Telegram JSON
+浏览器调试模式打开 `http://127.0.0.1:8765`，与桌面 App 共用同一套本地 API。
 
-```bash
-# GUI：选择 JSON 与数据库路径，后台线程导入并显示进度
-python importer_gui/main.py
+## 使用流程
 
-# 或命令行
-python sql_converter/json_to_sqlite.py --json result.json --db telegram_chat.db
-```
+1. **导入**：左下角「导入 JSON」选择 Telegram 导出的 `result.json`（支持一次选多个群的文件）；
+2. **切换群**：左侧群列表按最近活跃排序，点击即可切换；
+3. **看统计**：顶部「热力图」页有 7×24 活跃度、每日趋势与用户排行；
+4. **备份**：「备份与恢复」页手动创建快照；恢复需要输入 `RESTORE <快照名>`；
+5. **删除**：默认不可用。到「权限与审计」输入 `ENABLE DELETE` 授权后，才会解锁删除按钮；随时可撤销。
 
-再次执行同一条命令即可验证增量导入：`新增 0`、`跳过重复 N`，数据库总数不变。
+## 性能实测（Apple M5 Pro / 64 GB / macOS 27.0.1）
 
-### 2. 校验去重结果
+测试数据为脚本生成的 **232,707 条虚构消息**（103 MB JSON），不是 9,441 条的外推。
 
-```bash
-python sql_converter/verify_db.py --db telegram_chat.db
-```
+| 指标 | V1.1.0（旧网页查看器） | V1.2.0（新桌面应用） |
+|------|------------------------|----------------------|
+| 导入耗时 | 4.04 s | 3.63 s |
+| 导入峰值内存 | 1.21 GiB | 35.6 MB |
+| 数据库体积 | 181 MB | 181 MB |
+| 首屏渲染 | 372.6 ms | 84.6 ms（两次复测 84.6 / 105.3 ms） |
+| 滚动平均帧率 | 60.1 FPS | 60.0 FPS |
+| P95 帧率 / 帧耗时 | 59.5 FPS / 16.8 ms | 59.9 FPS / 16.7 ms |
+| JS 堆占用 | 197.0 MB | 5.2 MB → 8.2 MB |
+| DOM 消息节点 | 14–22 | 14 |
+| 深分页（OFFSET 100000，500 条） | 82.7 ms（仅 SQL） | 27.4 ms（仅 API）/ 122.4 ms（界面端到端） |
+| 重复导入（0 新增） | — | 1.77 s |
 
-输出会包含 `唯一去重键`、`重复键`、`孤儿文本实体` 与 `校验结果`。
+优化手段：Schema v3 复合索引、流式 JSON 解析、批量去重写入、服务端分页、前端虚拟滚动 + 动态高度测量。详见 [SystemDesign.md](SystemDesign.md)。
 
-### 3. 导出 CSV / Parquet
-
-```bash
-python sql_converter/export_data.py --db telegram_chat.db --format csv --output messages.csv
-python sql_converter/export_data.py --db telegram_chat.db --format parquet --output messages.parquet \
-  --start 2026-01-01 --end 2026-03-01
-```
-
-导出字段：`message_key / chat_id / message_id / message_type / date / date_unixtime / sender_name / sender_id / text_content / reply_to_message_id / forwarded_from / media_type / text_entities`。
-
-### 4. 热力图与时间轴
-
-```bash
-python heatmap_visualization/data_processor.py --input result.json --output heatmap_visualization/processed_data.json
-python heatmap_visualization/run.py
-# 打开 http://localhost:8090
-```
-
-时间轴操作：
-
-- 拖动每日趋势图下方滑块，或使用鼠标滚轮缩放；
-- 点击「近 7 天 / 近 30 天 / 近 90 天 / 全部」快速切换；
-- 区间变化后，顶部统计、关键词、时段画像和用户榜会同步只统计该区间；
-- 点击某一天仍可下钻到当日详情。
-
-### 5. 聊天查看器
-
-```bash
-cp result.json chat_viewer/chat_data.json
-cd chat_viewer && python -m http.server 8091
-# 打开 http://localhost:8091
-```
-
-- 每页条数可切换 `200 / 500 / 1000 / 2000`；
-- 上一页 / 下一页按页跳转，列表本身使用虚拟滚动，只渲染可视区域；
-- 支持全文搜索、用户筛选、回复跳转与深色模式。
-
-## 演示数据（完全虚构）
-
-```bash
-# 生成 400 条示例，用于仓库内演示
-python scripts/generate_demo_data.py --messages 400 --out examples/demo_chat.json
-
-# 生成 8,000 条，用于性能与截图验证
-python scripts/generate_demo_data.py --messages 8000 --days 150 --out /tmp/demo_large.json
-```
-
-`examples/demo_chat.json` 中的所有昵称、群名、消息均为随机虚构内容，不含真实聊天记录。
-
-## 数据库设计（Schema v2）
+## 数据库设计（Schema v3）
 
 ```sql
+CREATE TABLE chats (
+    chat_id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    original_name TEXT,
+    chat_type TEXT,
+    created_at TEXT,
+    updated_at TEXT
+);
+
 CREATE TABLE messages (
     row_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    message_key TEXT NOT NULL UNIQUE,  -- chat_id:message_id
-    id INTEGER NOT NULL,               -- Telegram 群内消息 ID
+    message_key TEXT NOT NULL UNIQUE,   -- chat_id:message_id
     chat_id TEXT NOT NULL,
+    id INTEGER NOT NULL,                -- Telegram 群内消息 ID
     message_type TEXT NOT NULL,
     date TEXT,
     date_unixtime INTEGER,
@@ -125,43 +107,75 @@ CREATE TABLE messages (
     content_hash TEXT
 );
 
-CREATE TABLE text_entities (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    message_key TEXT NOT NULL,
-    entity_type TEXT NOT NULL,
-    entity_text TEXT,
-    FOREIGN KEY (message_key) REFERENCES messages(message_key) ON DELETE CASCADE
-);
+-- 关键索引
+CREATE UNIQUE INDEX idx_messages_key ON messages(message_key);
+CREATE INDEX idx_messages_chat_date ON messages(chat_id, date_unixtime, row_id);
+CREATE INDEX idx_messages_chat_id ON messages(chat_id, id);
+CREATE INDEX idx_messages_chat_sender ON messages(chat_id, sender_name);
 ```
 
-为什么不用 `messages.id` 做主键：Telegram 的消息 ID 只是“群内序号”，两个群都会出现 `id=1`。使用 `chat_id:message_id` 作为唯一键，才能既支持多群合并，又让重复导入可验证。
+为什么用 `chat_id:message_id` 做主键：Telegram 的消息 ID 只是群内序号，两个群都会出现 `id=1`。复合键既支持多群合并，也让重复导入可验证。
 
-旧版 v1 数据库在首次打开时自动迁移：重命名旧表、回填 `message_key`、重建文本实体关联，不需要手工操作。
+v1 / v2 数据库在首次打开时自动迁移到 v3，不需要手工操作。
 
 ## 项目结构
 
 ```
 TG-Chat-to-SQL/
-├── importer_gui/              # tkinter 导入器 + DatabaseManager + JSONImporter
-├── sql_converter/             # CLI 导入 / 导出 / 校验
-│   ├── json_to_sqlite.py
-│   ├── export_data.py         # CSV / Parquet
-│   └── verify_db.py
-├── heatmap_visualization/     # ECharts 热力图 + 时间轴
-│   ├── data_processor.py
-│   ├── vendor/echarts.min.js  # 本地 ECharts，离线可用
-│   └── index.html
-├── chat_viewer/               # 虚拟滚动聊天查看器
-├── scripts/generate_demo_data.py
-├── tests/                     # 增量导入 / 迁移 / 导出单测
-├── examples/demo_chat.json    # 虚构演示数据
-├── docs/                      # 需求、设计、API、测试与截图
+├── app/
+│   ├── main.py                # AppKit + WKWebView 原生壳（毛玻璃 / 深色 / 文件桥）
+│   └── web/                   # 前端：深色玻璃 UI、虚拟滚动、ECharts
+├── core/
+│   ├── db.py                  # Schema v3、多群、分页查询、完整性校验
+│   ├── importer.py            # 流式 JSON 解析 + 批量去重写入
+│   ├── backup.py              # 快照 / 校验 / 恢复 / 保留策略
+│   ├── security.py            # 删除权限闸门 + 审计
+│   ├── server.py              # 127.0.0.1 HTTP API + 静态资源
+│   ├── paths.py / logging_setup.py
+├── scripts/
+│   ├── build_app.py           # PyInstaller 打包 arm64 .app
+│   ├── make_icon.py           # 纯代码生成图标
+│   ├── generate_demo_data.py  # 虚构演示数据（支持多群）
+│   ├── bench_viewer.py        # 旧查看器基线测量
+│   ├── bench_studio.py        # 新界面实测
+│   └── shot_studio.py         # Playwright 截图与状态导出
+├── sql_converter/             # CLI 导入 / CSV / Parquet 导出 / 校验（兼容保留）
+├── chat_viewer/               # V1.1 网页查看器（兼容保留）
+├── heatmap_visualization/     # V1.1 热力图（兼容保留）
+├── importer_gui/              # V1.1 Tkinter 导入器（兼容保留，不再作为主入口）
+├── tests/                     # 30 个单测
+├── docs/                      # 截图、现状盘点、开发文档
 ├── RequirementsSpec.md
 ├── SystemDesign.md
 ├── APISpec.md
 ├── TestPlan.md
 └── CHANGELOG.md
 ```
+
+## 命令行工具（兼容保留）
+
+```bash
+python sql_converter/json_to_sqlite.py --json result.json --db telegram_chat.db
+python sql_converter/verify_db.py --db telegram_chat.db
+python sql_converter/export_data.py --db telegram_chat.db --format csv --output messages.csv
+python sql_converter/export_data.py --db telegram_chat.db --format parquet --output messages.parquet \
+  --start 2026-01-01 --end 2026-03-01
+```
+
+## 演示数据（完全虚构）
+
+```bash
+# 单个群 400 条
+python scripts/generate_demo_data.py --messages 400 --out examples/demo_chat.json
+
+# 5 个群，每群 1,800 条
+python scripts/generate_demo_data.py --chats 5 --messages 1800 --days 90 --out /tmp/multi/demo_chat_1.json
+
+# 20 万条压测数据
+python scripts/generate_demo_data.py --messages 232000 --days 730 --out /tmp/bench/big.json
+```
+
+所有昵称、群名、消息内容均为随机虚构，不含任何真实聊天记录或身份信息。
 
 ## 文档
 
@@ -170,24 +184,22 @@ TG-Chat-to-SQL/
 - [API 规格](APISpec.md)
 - [测试计划](TestPlan.md)
 - [更新日志](CHANGELOG.md)
-- [现状盘点（2026-11-05）](docs/现状盘点-2026-11-05.md)
+- [V1.2.0 现状盘点](docs/现状盘点-v1.2.0.md)
 
 ## 测试
 
 ```bash
-python -m unittest discover -s tests -v
+python3 -m pytest tests/ -q
 ```
 
-覆盖：首次导入、二次导入零新增、文本实体不重复、跨群相同消息 ID、v1 → v2 自动迁移、CSV 导出、日期过滤、Parquet 导出（未安装 pyarrow 时自动跳过）。
-
-浏览器侧验证：`window.__viewer.getState()` 可读取实际渲染节点数；`window.__heatmap.getState()` 可读取当前时间轴区间。
+覆盖：多群隔离、重复导入零新增、跨群相同消息 ID、流式导入、群重命名/删除、删除权限默认关闭与授权/撤销、审计日志、快照创建/校验/恢复/保留策略、v1→v3 迁移、CSV/Parquet 导出。
 
 ## 隐私与安全
 
-- 所有处理均在本地完成，不收集、不上传数据；
-- `*.db`、`result.json`、`chat_viewer/chat_data.json` 等真实数据不会进入版本库；
+- 所有处理均在本地完成，`API` 只监听 `127.0.0.1`；
+- `*.db`、`result.json` 等真实数据不会进入版本库；
 - 演示数据、截图与示例全部使用虚构内容；
-- 请勿把含真实成员信息的导出文件提交到公开仓库。
+- 删除能力默认关闭，所有删除尝试（包括被拒绝的）都会写入 `logs/audit.jsonl`。
 
 ## 许可证
 
@@ -195,4 +207,4 @@ python -m unittest discover -s tests -v
 
 ## 更新日志
 
-见 [CHANGELOG.md](CHANGELOG.md)。当前版本 **v1.1.0**（2026-11-05）。
+见 [CHANGELOG.md](CHANGELOG.md)。当前版本 **v1.2.0**（2026-11-05）。

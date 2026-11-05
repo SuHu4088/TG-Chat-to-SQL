@@ -2,6 +2,58 @@
 
 本文件记录所有值得注意的变更。版本号遵循 `主版本.次版本.修订号`。
 
+## v1.2.0（2026-11-05）
+
+### 新增
+
+- **macOS 原生桌面应用**：`app/main.py` 使用 PyObjC（AppKit + WebKit），`NSVisualEffectView`（`behindWindow`）+ 透明 `WKWebView` 实现真实系统毛玻璃；强制深色外观。
+- **`TG Chat Studio.app`（arm64）**：`scripts/build_app.py` 通过 PyInstaller 打包，内置 Python 运行时，双击即可运行；纯代码生成应用图标（`scripts/make_icon.py`）。
+- **统一多群库（Schema v3）**：新增 `chats` 表；`messages.chat_id` 分区；`(chat_id, date_unixtime, row_id)` / `(chat_id, id)` / `(chat_id, sender_name)` 复合索引。
+- **群管理**：群列表、切换、重命名、受控删除、每群统计、每群导入记录。
+- **备份与回滚**：`core/backup.py` 支持手动快照、`.manifest.json`（sha256/大小/群数/消息数/schema）、恢复前完整性校验、`RESTORE <name>` 二次确认、恢复前自动 `pre-restore` 快照、保留策略（最近 10 个 / 总 2 GB）。
+- **删除权限闸门**：`core/security.py`，`delete_enabled` 默认 0；`ENABLE DELETE` 授权；可撤销；`audit_log` 表 + `logs/audit.jsonl` 双写，被拒绝的尝试也记录。
+- **本地 HTTP API**：`core/server.py`，仅监听 `127.0.0.1`；桌面 App、浏览器调试、Playwright 验收共用。
+- **流式导入**：`core/importer.py` 逐条 `raw_decode`，批量 500 条去重写入；导入峰值内存从 1.21 GiB 降到 35.6 MB。
+- **中文文档套件升级**：README、RequirementsSpec、SystemDesign、APISpec、TestPlan、CHANGELOG 全部更新到 v1.2.0。
+- **实测脚本**：`scripts/bench_viewer.py`（旧基线）、`scripts/bench_studio.py`（新界面）、`scripts/shot_studio.py`（截图与状态导出）。
+- **自动化测试**：新增 `tests/test_core_v12.py`，覆盖多群隔离、流式导入、删除闸门、审计、备份/恢复/保留策略。
+
+### 变更
+
+- 默认数据目录改为 `~/Library/Application Support/TGChatToSQL`（可用 `TGCHAT_DATA_DIR` 覆盖）。
+- 日志统一到 `core/logging_setup.py`，`logs/app.log` 按 5 MB × 5 滚动。
+- 聊天查看器改为「服务端分页 + 前端虚拟滚动」，容器拆分为 `chat-spacer`（总高度）与 `chat-window`（`translateY` 窗口），修复一次渲染 503 条的问题。
+- 服务消息中文化（邀请成员、改名、离开群组等），不再显示空文本。
+- 热力图 7×24 网格补齐 0 值单元格；每日趋势 X 轴按天数自适应显示日期刻度。
+- 群名生成器修复参数覆盖 bug，重新生成的多群演示数据群名正确。
+
+### 修复
+
+- 修复备份快照继承 WAL 模式导致只读校验 `unable to open database file` 的问题：快照生成后执行 `wal_checkpoint(TRUNCATE)` + `journal_mode=DELETE`，并清理 `-wal/-shm`。
+- 修复备份清单生成失败时残留半成品 `.db` 文件的问题。
+- 修复 API 层删除权限异常与二次确认异常未映射为 `403 / 400` 的问题。
+- 修复虚拟滚动因容器高度链错误导致的“全量渲染”（503 节点 → 14 节点）。
+- 修复 `loadMessages()` 调用未定义的 `rebuildUnits()` 导致页面空白。
+
+### 性能（232,707 条虚构消息 / M5 Pro / 64 GB / macOS 27.0.1）
+
+| 指标 | v1.1.0 | v1.2.0 |
+|------|--------|--------|
+| 导入耗时 | 4.04 s | 3.63 s |
+| 导入峰值 RSS | 1.21 GiB | 35.6 MB |
+| 首屏渲染 | 372.6 ms | 84.6 ms |
+| 平均帧率 | 60.1 FPS | 60.0 FPS |
+| P95 帧耗时 | 16.8 ms | 16.7 ms |
+| JS 堆 | 197.0 MB | 8.2 MB |
+| DOM 节点 | 14–22 | 14 |
+| 深分页 API | 82.7 ms | 27.4 ms |
+
+### 已知限制
+
+- `.app` 为 ad-hoc 签名、未公证，首次打开需右键或移除 quarantine；
+- 仅支持 macOS arm64，未适配 Intel 与 macOS 15/16；
+- 深分页仍为 OFFSET 实现，百万级数据建议改 keyset 分页。
+
 ## v1.1.0（2026-11-05）
 
 ### 新增

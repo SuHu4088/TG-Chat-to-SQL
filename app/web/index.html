@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TG Chat Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="titlebar-drag"></div>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">TG</div>
+      <div>
+        <h1>Chat Studio</h1>
+        <span class="version" id="versionLabel">v1.2.0</span>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="chatSearch" type="search" placeholder="搜索群组" autocomplete="off">
+    </div>
+
+    <div class="section-label">群组 <span id="chatCount">0</span></div>
+    <div class="chat-list" id="chatList"></div>
+
+    <div class="sidebar-footer">
+      <button class="ghost-btn" id="btnImport">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        导入 JSON
+      </button>
+      <button class="ghost-btn" id="btnNewBackup">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M4 7h16v13H4z"/><path d="M7 7V4h10v3"/><path d="M9 13h6"/></svg>
+        立即备份
+      </button>
+      <div class="db-status" id="dbStatus">校验中…</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h2 id="chatTitle">选择一个群组</h2>
+        <p class="subtitle" id="chatSubtitle">从左侧选择群组，或导入 Telegram 导出的 JSON</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="pill" id="btnRename" title="重命名群组">重命名</button>
+        <button class="pill danger" id="btnDeleteChat" title="删除群组（默认关闭）">删除</button>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-view="messages">聊天记录</button>
+      <button class="tab" data-view="heatmap">热力图</button>
+      <button class="tab" data-view="imports">导入记录</button>
+      <button class="tab" data-view="backups">备份与恢复</button>
+      <button class="tab" data-view="security">权限与审计</button>
+    </nav>
+
+    <section class="content">
+      <!-- 聊天记录 -->
+      <div class="view" id="view-messages">
+        <div class="toolbar">
+          <div class="search-box compact">
+            <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input id="messageSearch" type="search" placeholder="搜索消息或用户" autocomplete="off">
+          </div>
+          <div class="spacer"></div>
+          <label class="page-size">每页
+            <select id="pageSizeSelect">
+              <option value="200">200</option>
+              <option value="500" selected>500</option>
+              <option value="1000">1000</option>
+              <option value="2000">2000</option>
+            </select>
+          </label>
+          <button class="page-btn" id="prevPage" aria-label="上一页">‹</button>
+          <span class="page-info" id="pageInfo">1 / 1</span>
+          <button class="page-btn" id="nextPage" aria-label="下一页">›</button>
+        </div>
+
+        <div class="chat-shell">
+          <div class="chat-canvas" id="chatCanvas">
+            <div class="chat-spacer" id="chatSpacer">
+              <div class="chat-window" id="chatWindow"></div>
+            </div>
+          </div>
+          <div class="empty-state" id="emptyMessages">这里还没有消息</div>
+        </div>
+      </div>
+
+      <!-- 热力图 -->
+      <div class="view hidden" id="view-heatmap">
+        <div class="stat-row" id="heatStats"></div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3>7×24 活跃度</h3>
+            <span class="hint">颜色越亮，该时段消息越多</span>
+          </div>
+          <div class="chart" id="activityChart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3>每日趋势</h3>
+            <div class="range-pills" id="rangePills">
+              <button data-days="7">近 7 天</button>
+              <button data-days="30">近 30 天</button>
+              <button data-days="90">近 90 天</button>
+              <button data-days="0" class="active">全部</button>
+            </div>
+          </div>
+          <div class="chart tall" id="dailyChart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>活跃用户</h3><span class="hint">按消息数排序</span></div>
+          <div class="user-list" id="userList"></div>
+        </div>
+      </div>
+
+      <!-- 导入记录 -->
+      <div class="view hidden" id="view-imports">
+        <div class="panel">
+          <div class="panel-head"><h3>导入记录</h3><span class="hint">只记录当前群组</span></div>
+          <div class="table-wrap"><table id="importTable"></table></div>
+        </div>
+      </div>
+
+      <!-- 备份与恢复 -->
+      <div class="view hidden" id="view-backups">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>数据库快照</h3>
+            <button class="primary-btn" id="btnCreateBackup">创建快照</button>
+          </div>
+          <p class="hint block-hint">保留最近 10 个快照；总大小超过 2 GB 时自动清理最旧快照。恢复前会先校验完整性，并为当前库保存 pre-restore 快照。</p>
+          <div class="table-wrap"><table id="backupTable"></table></div>
+        </div>
+      </div>
+
+      <!-- 权限与审计 -->
+      <div class="view hidden" id="view-security">
+        <div class="panel danger-panel">
+          <div class="panel-head">
+            <h3>删除权限</h3>
+            <span class="badge" id="deleteBadge">已关闭</span>
+          </div>
+          <p class="hint block-hint">默认关闭：程序启动时不具备删除能力。开启后可以删除群组，所有删除尝试都会写入审计日志。可随时撤销。</p>
+          <div class="row-actions">
+            <input id="grantPhrase" placeholder="输入 ENABLE DELETE 以开启" autocomplete="off">
+            <button class="primary-btn" id="btnGrantDelete">开启删除权限</button>
+            <button class="ghost-btn" id="btnRevokeDelete">撤销权限</button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>审计日志</h3><span class="hint">最近 200 条</span></div>
+          <div class="table-wrap"><table id="auditTable"></table></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 通用弹窗 -->
+  <div class="modal-backdrop hidden" id="modal">
+    <div class="modal">
+      <h3 id="modalTitle">提示</h3>
+      <p id="modalText"></p>
+      <input id="modalInput" class="hidden" autocomplete="off">
+      <div class="modal-actions">
+        <button class="ghost-btn" id="modalCancel">取消</button>
+        <button class="primary-btn" id="modalConfirm">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="vendor/echarts.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

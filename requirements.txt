@@ -1,4 +1,5 @@
-# 核心导入 / 查看器 / 命令行仅依赖 Python 标准库
+# 核心导入 / 命令行仅依赖 Python 标准库。
+# 桌面 App（app/main.py）额外需要 PyObjC；打包需要 PyInstaller。
 
 # 热力图中文分词（可选；未安装时自动回退）
 jieba>=0.42
@@ -6,5 +7,13 @@ jieba>=0.42
 # Parquet 导出（可选；缺失时 CSV 导出仍可正常使用）
 pyarrow>=15.0
 
-# 打包 Windows EXE（仅开发时使用）
+# macOS 原生桌面外壳（PyObjC / AppKit / WebKit）
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-WebKit>=10.0
+
+# 打包 macOS .app（仅开发时使用）
 pyinstaller>=6.0
+
+# 浏览器验收与性能测量（仅开发时使用）
+playwright>=1.40
+pytest>=7.0
